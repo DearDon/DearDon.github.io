@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="Abstract:This program is to test python process pool. if no pool.join and result, you may not see all the output from subprocess. Be careful that the input functions for multiprocess pool can’t be cla">
+  <meta name="description" content="Abstract:This program is to test python process pool.">
 <meta name="keywords" content="programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python Multiprocess Pool">
 <meta property="og:url" content="www.deardon.win/2016/11/09/python-processpool/index.html">
 <meta property="og:site_name" content="D.P">
-<meta property="og:description" content="Abstract:This program is to test python process pool. if no pool.join and result, you may not see all the output from subprocess. Be careful that the input functions for multiprocess pool can’t be cla">
+<meta property="og:description" content="Abstract:This program is to test python process pool.">
 <meta property="og:locale" content="中文&English">
-<meta property="og:updated_time" content="2019-01-26T02:26:16.239Z">
+<meta property="og:updated_time" content="2019-02-05T09:28:24.136Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python Multiprocess Pool">
-<meta name="twitter:description" content="Abstract:This program is to test python process pool. if no pool.join and result, you may not see all the output from subprocess. Be careful that the input functions for multiprocess pool can’t be cla">
+<meta name="twitter:description" content="Abstract:This program is to test python process pool.">
 
 
 
@@ -395,7 +395,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-26 10:26:16" itemprop="dateModified" datetime="2019-01-26T10:26:16+08:00">2019-01-26</time>
+                <time title="Modified: 2019-02-05 17:28:24" itemprop="dateModified" datetime="2019-02-05T17:28:24+08:00">2019-02-05</time>
               
             
           </span>
@@ -447,95 +447,12 @@
       
 
       
-        <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract:"></a>Abstract:</h3><p>This program is to test python process pool.</p>
-<p>if no pool.join and result, you may not see all the output from subprocess.</p>
-<p>Be careful that the input functions for multiprocess pool can’t be class method, no matter it’s static or not.<br>Lambda expression that represent a function is also invalid.</p>
-<p>The expected input funtions should be normal funtion(outside of class).<br>It’s ok to call other process in the normal funtion.<br><a id="more"></a></p>
-<h3 id="Content"><a href="#Content" class="headerlink" title="Content:"></a>Content:</h3><pre><code>import multiprocessing
-import time
-import subprocess
-
-class JobSubmit(object):
-    def func(msg):
-        for i in xrange(3):
-            print msg
-            time.sleep(0.5)
-        return &quot;done &quot; + msg
-
-def func(msg):
-    for i in xrange(3):
-        print msg
-        time.sleep(0.5)
-    return &quot;done &quot; + msg
-
-def func1(msg):
-    for i in xrange(3):
-        cmd=&#39;echo &#39;+msg
-        subprocess.call(cmd, shell=True)
-        time.sleep(3)
-    return &quot;done &quot; + msg
-
-if __name__ == &quot;__main__&quot;:
-    pool = multiprocessing.Pool(processes=6)
-    result = []
-
-    if 0: #this run well
-        for i in xrange(10):
-            msg = &quot;hello %d&quot; %(i)
-            result.append(pool.apply_async(func, (msg, )))
-        print &quot;in the middle&quot;
-        time.sleep(3)
-        for i in xrange(10,15):
-            msg = &quot;hello %d&quot; %(i)
-            result.append(pool.apply_async(func, (msg, )))
-        pool.close()
-        pool.join()
-        for res in result:
-            print res.get()
-        print &quot;Sub-process(es) done.&quot;
-
-    if 0: #this fail as pool can handle method in class
-        js=JobSubmit()
-        for i in xrange(10):
-            msg = &quot;hello %d&quot; %(i)
-            result.append(pool.apply_async(js.func, (msg, )))
-        print &quot;in the middle&quot;
-        time.sleep(3)
-        for i in xrange(10,15):
-            msg = &quot;hello %d&quot; %(i)
-            result.append(pool.apply_async(js.func, (msg, )))
-        pool.close()
-        pool.join()
-        for res in result:
-            print res.get()
-        print &quot;Sub-process(es) done.&quot;
-
-    #if 0: # run well to call other process
-    for i in xrange(5):
-        msg = &quot;hello %d&quot; %(i)
-        result.append(pool.apply_async(func1, (msg, )))
-    print &quot;in the middle&quot;
-    time.sleep(0.1)
-    for i in xrange(10,15):
-        msg = &quot;hello %d&quot; %(i)
-        result.append(pool.apply_async(func1, (msg, )))
-    pool.close()
-    pool.join()
-    for res in result:
-        print res.get()
-    print &quot;Sub-process(es) done.&quot;
-
-    if 0:  # call lambda, faild, can&#39;t call lambda
-        for i in xrange(10):
-            msg = &quot;echo %d&quot; %(i)
-            result.append(pool.apply_async(lambda x: subprocess.Popen(x, shell=True), (msg, )))
-        pool.close()
-        pool.join()
-        for res in result:
-            print res.get()
-        print &quot;Sub-process(es) done.&quot;
-</code></pre><h3 id="History"><a href="#History" class="headerlink" title="History:"></a>History:</h3><ul>
-<li><em>2016-11-09</em>:create the page<br></li>
+        <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract:"></a>Abstract:</h2><p>This program is to test python process pool.<br><a id="more"></a></p>
+<h2 id="Content"><a href="#Content" class="headerlink" title="Content:"></a>Content:</h2><p>if no pool.join and result, you may not see all the output from subprocess. Be careful that the input functions for multiprocess pool can’t be class method, no matter it’s static or not.  Lambda expression that represent a function is also invalid.</p>
+<p>The expected input funtions should be normal funtion(outside of class). It’s ok to call other process in the normal funtion.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> multiprocessing</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> subprocess</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">JobSubmit</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(msg)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">3</span>):</span><br><span class="line">            <span class="keyword">print</span> msg</span><br><span class="line">            time.sleep(<span class="number">0.5</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"done "</span> + msg</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(msg)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">3</span>):</span><br><span class="line">        <span class="keyword">print</span> msg</span><br><span class="line">        time.sleep(<span class="number">0.5</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"done "</span> + msg</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func1</span><span class="params">(msg)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">3</span>):</span><br><span class="line">        cmd=<span class="string">'echo '</span>+msg</span><br><span class="line">        subprocess.call(cmd, shell=<span class="keyword">True</span>)</span><br><span class="line">        time.sleep(<span class="number">3</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"done "</span> + msg</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    pool = multiprocessing.Pool(processes=<span class="number">6</span>)</span><br><span class="line">    result = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="number">0</span>: <span class="comment">#this run well</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">10</span>):</span><br><span class="line">            msg = <span class="string">"hello %d"</span> %(i)</span><br><span class="line">            result.append(pool.apply_async(func, (msg, )))</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"in the middle"</span></span><br><span class="line">        time.sleep(<span class="number">3</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">10</span>,<span class="number">15</span>):</span><br><span class="line">            msg = <span class="string">"hello %d"</span> %(i)</span><br><span class="line">            result.append(pool.apply_async(func, (msg, )))</span><br><span class="line">        pool.close()</span><br><span class="line">        pool.join()</span><br><span class="line">        <span class="keyword">for</span> res <span class="keyword">in</span> result:</span><br><span class="line">            <span class="keyword">print</span> res.get()</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Sub-process(es) done."</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="number">0</span>: <span class="comment">#this fail as pool can handle method in class</span></span><br><span class="line">        js=JobSubmit()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">10</span>):</span><br><span class="line">            msg = <span class="string">"hello %d"</span> %(i)</span><br><span class="line">            result.append(pool.apply_async(js.func, (msg, )))</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"in the middle"</span></span><br><span class="line">        time.sleep(<span class="number">3</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">10</span>,<span class="number">15</span>):</span><br><span class="line">            msg = <span class="string">"hello %d"</span> %(i)</span><br><span class="line">            result.append(pool.apply_async(js.func, (msg, )))</span><br><span class="line">        pool.close()</span><br><span class="line">        pool.join()</span><br><span class="line">        <span class="keyword">for</span> res <span class="keyword">in</span> result:</span><br><span class="line">            <span class="keyword">print</span> res.get()</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Sub-process(es) done."</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#if 0: # run well to call other process</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">5</span>):</span><br><span class="line">        msg = <span class="string">"hello %d"</span> %(i)</span><br><span class="line">        result.append(pool.apply_async(func1, (msg, )))</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"in the middle"</span></span><br><span class="line">    time.sleep(<span class="number">0.1</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">10</span>,<span class="number">15</span>):</span><br><span class="line">        msg = <span class="string">"hello %d"</span> %(i)</span><br><span class="line">        result.append(pool.apply_async(func1, (msg, )))</span><br><span class="line">    pool.close()</span><br><span class="line">    pool.join()</span><br><span class="line">    <span class="keyword">for</span> res <span class="keyword">in</span> result:</span><br><span class="line">        <span class="keyword">print</span> res.get()</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"Sub-process(es) done."</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="number">0</span>:  <span class="comment"># call lambda, faild, can't call lambda</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">10</span>):</span><br><span class="line">            msg = <span class="string">"echo %d"</span> %(i)</span><br><span class="line">            result.append(pool.apply_async(<span class="keyword">lambda</span> x: subprocess.Popen(x, shell=<span class="keyword">True</span>), (msg, )))</span><br><span class="line">        pool.close()</span><br><span class="line">        pool.join()</span><br><span class="line">        <span class="keyword">for</span> res <span class="keyword">in</span> result:</span><br><span class="line">            <span class="keyword">print</span> res.get()</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Sub-process(es) done."</span></span><br></pre></td></tr></table></figure>
+<h2 id="History"><a href="#History" class="headerlink" title="History:"></a>History:</h2><ul>
+<li><em>2016-11-09</em>:create the page</li>
 </ul>
 
       
@@ -739,7 +656,7 @@ if __name__ == &quot;__main__&quot;:
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Content"><span class="nav-number">2.</span> <span class="nav-text">Content:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#History"><span class="nav-number">3.</span> <span class="nav-text">History:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Content"><span class="nav-number">2.</span> <span class="nav-text">Content:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History"><span class="nav-number">3.</span> <span class="nav-text">History:</span></a></li></ol></div>
             
 
           </div>

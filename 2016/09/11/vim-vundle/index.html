@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="D.P">
 <meta property="og:description" content="Abstract:Vim非常强大，其中一个重要原因是丰富的插件。为了高效管理插件，Vundle(Vim bundle)是不错的选择，它也是一个vim的插件，但它可以管理其他插件，所以装好它其它插件都so easy.">
 <meta property="og:locale" content="中文&English">
-<meta property="og:updated_time" content="2019-01-26T02:19:15.306Z">
+<meta property="og:updated_time" content="2019-02-05T09:07:09.415Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vim 插件安装(Vundle)">
 <meta name="twitter:description" content="Abstract:Vim非常强大，其中一个重要原因是丰富的插件。为了高效管理插件，Vundle(Vim bundle)是不错的选择，它也是一个vim的插件，但它可以管理其他插件，所以装好它其它插件都so easy.">
@@ -395,7 +395,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-26 10:19:15" itemprop="dateModified" datetime="2019-01-26T10:19:15+08:00">2019-01-26</time>
+                <time title="Modified: 2019-02-05 17:07:09" itemprop="dateModified" datetime="2019-02-05T17:07:09+08:00">2019-02-05</time>
               
             
           </span>
@@ -447,10 +447,10 @@
       
 
       
-        <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract:"></a>Abstract:</h3><p>Vim非常强大，其中一个重要原因是丰富的插件。为了高效管理插件，Vundle(Vim bundle)是不错的选择，它也是一个vim的插件，但它可以管理其他插件，所以装好它其它插件都so easy.<br><br><a id="more"></a></p>
-<h3 id="Content"><a href="#Content" class="headerlink" title="Content:"></a>Content:</h3><p>以下安装基于linux，参考自Vundle在github上的<a href="https://github.com/VundleVim/Vundle.vim" target="_blank" rel="noopener">项目说明</a>，原文写得很清楚，这里只是简单翻译。</p>
-<h4 id="1-建立Vundle"><a href="#1-建立Vundle" class="headerlink" title="1. 建立Vundle:"></a>1. 建立Vundle:</h4><pre><code>$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-</code></pre><h4 id="2-Vundle配置-vimrc"><a href="#2-Vundle配置-vimrc" class="headerlink" title="2. Vundle配置(.vimrc):"></a>2. Vundle配置(.vimrc):</h4><pre><code>set nocompatible              &quot; be iMproved, required
+        <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract:"></a>Abstract:</h2><p>Vim非常强大，其中一个重要原因是丰富的插件。为了高效管理插件，Vundle(Vim bundle)是不错的选择，它也是一个vim的插件，但它可以管理其他插件，所以装好它其它插件都so easy.<br><a id="more"></a></p>
+<h2 id="Content"><a href="#Content" class="headerlink" title="Content:"></a>Content:</h2><p>以下安装基于linux，参考自Vundle在github上的<a href="https://github.com/VundleVim/Vundle.vim" target="_blank" rel="noopener">项目说明</a>，原文写得很清楚，这里只是简单翻译。</p>
+<h3 id="建立Vundle"><a href="#建立Vundle" class="headerlink" title="建立Vundle:"></a>建立Vundle:</h3><pre><code>$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+</code></pre><h3 id="Vundle配置-vimrc"><a href="#Vundle配置-vimrc" class="headerlink" title="Vundle配置(.vimrc):"></a>Vundle配置(.vimrc):</h3><pre><code>set nocompatible              &quot; be iMproved, required
 filetype off                  &quot; required
 
 &quot; set the runtime path to include Vundle and initialize
@@ -479,18 +479,18 @@ filetype plugin indent on    &quot; required
 &quot; see :h vundle for more details or wiki for FAQ
 &quot; Put your non-Plugin stuff after this line
 </code></pre><p>可以看到想安装插件只要在<code>call vundel#begin()</code>和<code>call vundle#end()</code>间加入相应的插件即可自动管理(格式如<code>Plugin &#39;VundleVim/Vundle.vim&#39;</code>，该插件是必须的)。实践发现在<code>call vundle#end()</code>之后用<code>Bundle $PluginName</code>(格式如<code>Bundle &#39;Valloric/YoucompleteMe&#39;</code>)也可以和上述<code>Plugin $PluginName</code>方式一样管理插件。</p>
-<h4 id="3-安装插件"><a href="#3-安装插件" class="headerlink" title="3. 安装插件:"></a>3. 安装插件:</h4><p>记得先<code>source $vimrcfile</code>($vimrcfile为上面的vimrc)，让其生效。然后<br>打开vim输入</p>
+<h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件:"></a>安装插件:</h3><p>记得先<code>source $vimrcfile</code>($vimrcfile为上面的vimrc)，让其生效。然后<br>打开vim输入</p>
 <pre><code>:PluginInstall
 </code></pre><p>或在终端输入</p>
 <pre><code>$ vim +PluginInstall +qall
-</code></pre><h4 id="4-update插件"><a href="#4-update插件" class="headerlink" title="4. update插件:"></a>4. update插件:</h4><p>打开vim输入</p>
+</code></pre><h3 id="update插件"><a href="#update插件" class="headerlink" title="update插件:"></a>update插件:</h3><p>打开vim输入</p>
 <pre><code>:PluginUpdate
 </code></pre><p>或在终端输入</p>
 <pre><code>$ vim +PluginUpdate +qall
-</code></pre><h3 id="History"><a href="#History" class="headerlink" title="History:"></a>History:</h3><ul>
-<li><em>2016-09-11</em>: 将内容记录下来<br></li>
-<li><em>2016-09-13</em>: 修改排版<br></li>
-<li><em>2018-01-06</em>: add update plugin<br></li>
+</code></pre><h2 id="History"><a href="#History" class="headerlink" title="History:"></a>History:</h2><ul>
+<li><em>2016-09-11</em>: 将内容记录下来</li>
+<li><em>2016-09-13</em>: 修改排版</li>
+<li><em>2018-01-06</em>: add update plugin</li>
 </ul>
 
       
@@ -694,7 +694,7 @@ filetype plugin indent on    &quot; required
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Content"><span class="nav-number">2.</span> <span class="nav-text">Content:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-建立Vundle"><span class="nav-number">2.1.</span> <span class="nav-text">1. 建立Vundle:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Vundle配置-vimrc"><span class="nav-number">2.2.</span> <span class="nav-text">2. Vundle配置(.vimrc):</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-安装插件"><span class="nav-number">2.3.</span> <span class="nav-text">3. 安装插件:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-update插件"><span class="nav-number">2.4.</span> <span class="nav-text">4. update插件:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#History"><span class="nav-number">3.</span> <span class="nav-text">History:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Content"><span class="nav-number">2.</span> <span class="nav-text">Content:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建立Vundle"><span class="nav-number">2.1.</span> <span class="nav-text">建立Vundle:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vundle配置-vimrc"><span class="nav-number">2.2.</span> <span class="nav-text">Vundle配置(.vimrc):</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装插件"><span class="nav-number">2.3.</span> <span class="nav-text">安装插件:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#update插件"><span class="nav-number">2.4.</span> <span class="nav-text">update插件:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History"><span class="nav-number">3.</span> <span class="nav-text">History:</span></a></li></ol></div>
             
 
           </div>

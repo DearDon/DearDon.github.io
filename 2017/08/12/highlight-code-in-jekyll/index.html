@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="D.P">
 <meta property="og:description" content="Abstract:I demostrate how I highlight the code in my jekyll v3.* post by rouge.">
 <meta property="og:locale" content="中文&English">
-<meta property="og:updated_time" content="2019-01-26T02:53:41.544Z">
+<meta property="og:updated_time" content="2019-02-05T09:35:54.505Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Highlight Code in Jekyll">
 <meta name="twitter:description" content="Abstract:I demostrate how I highlight the code in my jekyll v3.* post by rouge.">
@@ -395,7 +395,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-26 10:53:41" itemprop="dateModified" datetime="2019-01-26T10:53:41+08:00">2019-01-26</time>
+                <time title="Modified: 2019-02-05 17:35:54" itemprop="dateModified" datetime="2019-02-05T17:35:54+08:00">2019-02-05</time>
               
             
           </span>
@@ -447,15 +447,15 @@
       
 
       
-        <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract:"></a>Abstract:</h3><p>I demostrate how I highlight the code in my <code>jekyll v3.*</code> post by rouge.<br><a id="more"></a></p>
-<h3 id="Content"><a href="#Content" class="headerlink" title="Content:"></a>Content:</h3><p>Code is the most usual block we record for a technical blog. However code<br>without good highlight and format is a mess for reading. </p>
+        <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract:"></a>Abstract:</h2><p>I demostrate how I highlight the code in my <code>jekyll v3.*</code> post by rouge.<br><a id="more"></a></p>
+<h2 id="Content"><a href="#Content" class="headerlink" title="Content:"></a>Content:</h2><p>Code is the most usual block we record for a technical blog. However code<br>without good highlight and format is a mess for reading. </p>
 <p>Old version of jekyll use redcarpet by default, and use pygments to highlight<br>code. Since Jekyll upgrade to v3.*, it only suppport kramdown.<br>Now github has udpate jekyll to v3.*, so GitHub Pages only supports Rouge as<br>code highlighter. </p>
 <p>According to <a href="https://sacha.me/articles/jekyll-rouge/" target="_blank" rel="noopener">https://sacha.me/articles/jekyll-rouge/</a>, the easiest way to use<br>Rouge is using the kramdown markdown parser. They recently added native support<br>for Rouge and Jekyll has been supporting kramdown for a while now.<br> </p>
-<h4 id="1-Install"><a href="#1-Install" class="headerlink" title="1. Install"></a>1. Install</h4><p>First, make sure you’re using a recent version of Jekyll (for example 2.5.0).<br>You can check your installed version using <code>jekyll -v</code>. </p>
+<h3 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h3><p>First, make sure you’re using a recent version of Jekyll (for example 2.5.0).<br>You can check your installed version using <code>jekyll -v</code>. </p>
 <p>Next up, you need to install kramdown and Rouge. </p>
 <pre><code>gem install kramdown rouge 
 </code></pre><p>If you already have a version of kramdown on your machine, make sure it’s at<br>least on version 1.5.0. <br><br>If you’ve followed these steps so far you’re now ready to use kramdown and Rouge<br>within your Jekyll setup.<br><br>By the way, if, like me, you’re always getting errors doing anything with Rouge,<br>remember it’s called Rouge, not Rogue. </p>
-<h4 id="2-Setting"><a href="#2-Setting" class="headerlink" title="2. Setting"></a>2. Setting</h4><h5 id="2-1-setting-in-config-yml"><a href="#2-1-setting-in-config-yml" class="headerlink" title="2.1. setting in _config.yml"></a>2.1. setting in _config.yml</h5><p>As with all options concerning your builds, the place to add them is in your<br><code>_config.yml</code>. </p>
+<h3 id="Setting"><a href="#Setting" class="headerlink" title="Setting"></a>Setting</h3><h4 id="setting-in-config-yml"><a href="#setting-in-config-yml" class="headerlink" title="setting in _config.yml"></a>setting in _config.yml</h4><p>As with all options concerning your builds, the place to add them is in your<br><code>_config.yml</code>. </p>
 <p>You might have an entry like highlighter: pygments in there, make sure to remove<br>that. </p>
 <p>According to virtua’s <a href="http://blog.virtuacreative.com.br/upgrade-
 jekyll-2-to-3-gh-pages.html" target="_blank" rel="noopener">page</a>. If you used pygments before, don’t worry, Rouge is<br>fully compatible with it. So, the only thing to do is changing your _config.yml,<br>making sure it has: </p>
@@ -473,7 +473,7 @@ highlighter: rouge
 </code></pre><p>If you want to display line numbers on every code block, you can easily do that<br>by adding this line to your _config.yml: </p>
 <pre><code>line_numbers: true 
 </code></pre><p>Or you can use linenos to set line for each block. We’ll show an example later. </p>
-<h5 id="2-2-generate-css-style-file"><a href="#2-2-generate-css-style-file" class="headerlink" title="2.2. generate css style file"></a>2.2. generate css style file</h5><p>You need to use a css file to manage your syntax style for jekyll page. <br><br>To generate such syntax.css file, you need choose a style. You can get all<br>availables by: </p>
+<h4 id="generate-css-style-file"><a href="#generate-css-style-file" class="headerlink" title="generate css style file"></a>generate css style file</h4><p>You need to use a css file to manage your syntax style for jekyll page. <br><br>To generate such syntax.css file, you need choose a style. You can get all<br>availables by: </p>
 <pre><code>rougify help style 
 </code></pre><p>Then choose one to generate css file, take monokai style for example. In your<br>jekyll bolg root path: </p>
 <pre><code>rougify style monokai &gt; css/syntax.css 
@@ -481,7 +481,7 @@ highlighter: rouge
 <pre><code>&lt;!-- Syntax CSS --&gt;
     &lt;link href=&quot;/css/syntax.css&quot; rel=&quot;stylesheet&quot;&gt; 
 </code></pre><p>Now, all setting’s done!!! </p>
-<h4 id="3-Usage"><a href="#3-Usage" class="headerlink" title="3. Usage"></a>3. Usage</h4><p>With Rouge, you won’t need Python installed locally to work on your Jekyll site.<br>It is fully written in Ruby. It also provides full backtick support for<br>highlighting your code. </p>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p>With Rouge, you won’t need Python installed locally to work on your Jekyll site.<br>It is fully written in Ruby. It also provides full backtick support for<br>highlighting your code. </p>
 <p>No only you can do with writing the usual highlight:<br>
     {% highlight %} 
     ...code...
@@ -499,9 +499,9 @@ highlighter: rouge
     end
     {% endhighlight %}
 <br>Note that both highlight and backticks are fully supported by Rouge. </p>
-<h3 id="Questions"><a href="#Questions" class="headerlink" title="Questions:"></a>Questions:</h3><h4 id="1-code-highlight-without-color"><a href="#1-code-highlight-without-color" class="headerlink" title="1. code highlight without color"></a>1. code highlight without color</h4><p>I’ve encounted a problem that highlight just didn’t work after all setting and<br>installation are done.It turn out to be a quite easy issue. Just lack of css<br>file to tell highlight which color style should be used!!<br><br>So if you have the same problem, just generate the css file for your page. </p>
+<h2 id="Questions"><a href="#Questions" class="headerlink" title="Questions:"></a>Questions:</h2><h3 id="code-highlight-without-color"><a href="#code-highlight-without-color" class="headerlink" title="code highlight without color"></a>code highlight without color</h3><p>I’ve encounted a problem that highlight just didn’t work after all setting and<br>installation are done.It turn out to be a quite easy issue. Just lack of css<br>file to tell highlight which color style should be used!!<br><br>So if you have the same problem, just generate the css file for your page. </p>
 <p>Please get details from the post for generate syntax.css file!! </p>
-<h3 id="History"><a href="#History" class="headerlink" title="History:"></a>History:</h3><ul>
+<h2 id="History"><a href="#History" class="headerlink" title="History:"></a>History:</h2><ul>
 <li><em>2017-08-12</em>: create post for recording how to highlight code syntax in<br>jekyll post by rouge, including install, setting and usage. </li>
 </ul>
 
@@ -706,7 +706,7 @@ highlighter: rouge
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Content"><span class="nav-number">2.</span> <span class="nav-text">Content:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Install"><span class="nav-number">2.1.</span> <span class="nav-text">1. Install</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Setting"><span class="nav-number">2.2.</span> <span class="nav-text">2. Setting</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-setting-in-config-yml"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.1. setting in _config.yml</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-generate-css-style-file"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2. generate css style file</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Usage"><span class="nav-number">2.3.</span> <span class="nav-text">3. Usage</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Questions"><span class="nav-number">3.</span> <span class="nav-text">Questions:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-code-highlight-without-color"><span class="nav-number">3.1.</span> <span class="nav-text">1. code highlight without color</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#History"><span class="nav-number">4.</span> <span class="nav-text">History:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Content"><span class="nav-number">2.</span> <span class="nav-text">Content:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Install"><span class="nav-number">2.1.</span> <span class="nav-text">Install</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Setting"><span class="nav-number">2.2.</span> <span class="nav-text">Setting</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#setting-in-config-yml"><span class="nav-number">2.2.1.</span> <span class="nav-text">setting in _config.yml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#generate-css-style-file"><span class="nav-number">2.2.2.</span> <span class="nav-text">generate css style file</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Usage"><span class="nav-number">2.3.</span> <span class="nav-text">Usage</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Questions"><span class="nav-number">3.</span> <span class="nav-text">Questions:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#code-highlight-without-color"><span class="nav-number">3.1.</span> <span class="nav-text">code highlight without color</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History"><span class="nav-number">4.</span> <span class="nav-text">History:</span></a></li></ol></div>
             
 
           </div>

@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="D.P">
 <meta property="og:description" content="Abstract在ubuntu10.04下搭建jekyll写github page，其它平台未尝试。内容参考的github官方的说明，比较可靠。">
 <meta property="og:locale" content="中文&English">
-<meta property="og:updated_time" content="2019-02-05T07:46:20.508Z">
+<meta property="og:updated_time" content="2019-02-05T09:39:25.729Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建jekyll写github page">
 <meta name="twitter:description" content="Abstract在ubuntu10.04下搭建jekyll写github page，其它平台未尝试。内容参考的github官方的说明，比较可靠。">
@@ -395,7 +395,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-02-05 15:46:20" itemprop="dateModified" datetime="2019-02-05T15:46:20+08:00">2019-02-05</time>
+                <time title="Modified: 2019-02-05 17:39:25" itemprop="dateModified" datetime="2019-02-05T17:39:25+08:00">2019-02-05</time>
               
             
           </span>
@@ -454,9 +454,9 @@
 <p>另外，在执行命令时可能出现没有javascript的runtime环境问题，可参考<a href="https://github.com/rails/execjs" target="_blank" rel="noopener">https://github.com/rails/execjs</a>上网下载相应的环境，注意如果是用gem命令下的，只能在gem命令里使用该runtime环境，用bundle命令时仍然会报错，所以要用bundle安装该环境，方法就和安装jekyll差不多，在Gemfile里加上gem ‘therubyracer’，还有后面加参数的形式，但是运行可能报错，不加参数实践证明也是OK的。至此环境安装成功。其中可能还会有些小问题，比如里面有个no什么什么的库一直报问题，注意要先下载了个c的dev环境库，具体可以直接搜那个缺少的包名的官方网站，上面有明确说明，而且说了在ubuntu,debian下不要用本地的那个包，要在线构建（网上就用说用这个本地构建的，也不说清楚系统状况，真是坑）。</p>
 <h3 id="在ubuntu16-04下搭建"><a href="#在ubuntu16-04下搭建" class="headerlink" title="在ubuntu16.04下搭建"></a>在ubuntu16.04下搭建</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#check version need new than 2.0</span></span><br><span class="line">ruby --version </span><br><span class="line"></span><br><span class="line"><span class="comment">#if ruby not install, install it</span></span><br><span class="line">sudo apt-get install ruby </span><br><span class="line"></span><br><span class="line"><span class="comment">#install jekyll</span></span><br><span class="line">$ gem install jekyll </span><br><span class="line"></span><br><span class="line"><span class="comment">#create a new site </span></span><br><span class="line">$ jekyll new Blog</span><br><span class="line"><span class="comment">#or clone a existed site from github, we name it Blog</span></span><br><span class="line">$ git <span class="built_in">clone</span>  https://github.com/DearDon/DearDon.github.io.git Blog</span><br><span class="line"></span><br><span class="line"><span class="comment">#start jekyll</span></span><br><span class="line">$ <span class="built_in">cd</span> Blog</span><br><span class="line">$ jekyll serve</span><br><span class="line"><span class="comment"># =&gt; Now browse to http://localhost:4000</span></span><br></pre></td></tr></table></figure>
 <h2 id="History"><a href="#History" class="headerlink" title="History:"></a>History:</h2><ul>
-<li><em>2015-12-06</em>: 快速将内容记录了下来<br></li>
-<li><em>2015-12-27</em>: 对格式和段落进行分划<br></li>
-<li><em>2016-09-25</em>: add easy install in ubuntu16.04<br></li>
+<li><em>2015-12-06</em>: 快速将内容记录了下来</li>
+<li><em>2015-12-27</em>: 对格式和段落进行分划</li>
+<li><em>2016-09-25</em>: add easy install in ubuntu16.04</li>
 </ul>
 
       
