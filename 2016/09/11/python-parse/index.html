@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="Abstrac:This page try to describe the basic function of argparse, which handle the input argument well.argparse is included in python package. We can import it directly.">
+  <meta name="description" content="Abstract:This page try to describe the basic function of argparse, which handle the input argument well.argparse is included in python package. We can import it directly.">
 <meta name="keywords" content="programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python Parse Console Input">
 <meta property="og:url" content="www.deardon.win/2016/09/11/python-parse/index.html">
 <meta property="og:site_name" content="D.P">
-<meta property="og:description" content="Abstrac:This page try to describe the basic function of argparse, which handle the input argument well.argparse is included in python package. We can import it directly.">
+<meta property="og:description" content="Abstract:This page try to describe the basic function of argparse, which handle the input argument well.argparse is included in python package. We can import it directly.">
 <meta property="og:locale" content="中文&English">
-<meta property="og:updated_time" content="2019-01-26T02:15:31.643Z">
+<meta property="og:updated_time" content="2019-02-05T08:55:45.127Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python Parse Console Input">
-<meta name="twitter:description" content="Abstrac:This page try to describe the basic function of argparse, which handle the input argument well.argparse is included in python package. We can import it directly.">
+<meta name="twitter:description" content="Abstract:This page try to describe the basic function of argparse, which handle the input argument well.argparse is included in python package. We can import it directly.">
 
 
 
@@ -395,7 +395,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-26 10:15:31" itemprop="dateModified" datetime="2019-01-26T10:15:31+08:00">2019-01-26</time>
+                <time title="Modified: 2019-02-05 16:55:45" itemprop="dateModified" datetime="2019-02-05T16:55:45+08:00">2019-02-05</time>
               
             
           </span>
@@ -447,27 +447,15 @@
       
 
       
-        <h3 id="Abstrac"><a href="#Abstrac" class="headerlink" title="Abstrac:"></a>Abstrac:</h3><p>This page try to describe the basic function of argparse, which handle the input argument well.<br>argparse is included in python package. We can import it directly.<br><br><a id="more"></a></p>
-<h3 id="Content"><a href="#Content" class="headerlink" title="Content:"></a>Content:</h3><p>As it’s quite simple and useful for coding, I just give a short example to show the most common usage.<br></p>
-<pre><code>import argparse as arg
-parser = arg.ArgumentParser(description=&#39;Calculate the exponent of given number, sample to practise argparse&#39;)
-parser.add_argument(&quot;testflag&quot;, type=int, help=&quot;display the test&quot;)
-parser.add_argument(&quot;-l&quot;, &quot;--list&quot;, type=int, help=&quot;given number and power&quot;, required=True, nargs=&#39;+&#39;)
-parser.add_argument(&quot;-v&quot;, &quot;--verbosity&quot;, type=int, choices=[0,1], help=&quot;increate output verbosity&quot;, default=0)
-args=parser.parse_args()
-
-#answer=args.testflag**2
-if args.testflag==1:
-    print(&quot;test success&quot;)
-list=args.list;
-answer=list[0]**list[1]
-if args.verbosity==1:
-    print&quot;the number {0} power {1} is {2}&quot;.format(list[0], list[1], answer)
-else:
-    print(answer)
-</code></pre><h3 id="History"><a href="#History" class="headerlink" title="History:"></a>History:</h3><ul>
+        <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract:"></a>Abstract:</h2><p>This page try to describe the basic function of argparse, which handle the input argument well.<br>argparse is included in python package. We can import it directly.<br><a id="more"></a></p>
+<h2 id="Content"><a href="#Content" class="headerlink" title="Content:"></a>Content:</h2><p>As it’s quite simple and useful for coding, I just give a short example to show the most common usage. You could add different types of arguments by <code>add_argument</code>.</p>
+<h3 id="Basic-Usage"><a href="#Basic-Usage" class="headerlink" title="Basic Usage"></a>Basic Usage</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># import module</span></span><br><span class="line"><span class="keyword">import</span> argparse <span class="keyword">as</span> arg</span><br><span class="line"><span class="comment"># init parser object</span></span><br><span class="line">parser = arg.ArgumentParser(description=<span class="string">'Calculate the exponent of given number, sample to practise argparse'</span>)</span><br><span class="line"><span class="comment"># add one int type argument</span></span><br><span class="line">parser.add_argument(<span class="string">"testflag"</span>, type=int, help=<span class="string">"display the test"</span>)</span><br><span class="line"><span class="comment"># add a list of arguments and store as int list</span></span><br><span class="line">parser.add_argument(<span class="string">"-l"</span>, <span class="string">"--list"</span>, type=int, help=<span class="string">"given number and power"</span>, required=<span class="keyword">True</span>, nargs=<span class="string">'+'</span>)</span><br><span class="line"><span class="comment"># add a another int type argument that can only be of the choices</span></span><br><span class="line">parser.add_argument(<span class="string">"-v"</span>, <span class="string">"--verbosity"</span>, type=int, choices=[<span class="number">0</span>,<span class="number">1</span>], help=<span class="string">"increate output verbosity"</span>, default=<span class="number">0</span>)</span><br><span class="line"><span class="comment"># add a flag only argument to store true or false</span></span><br><span class="line">parser.add_argument(<span class="string">'-f'</span>, <span class="string">'--force'</span>, action=<span class="string">'store_true'</span>, help=<span class="string">"force to update golden without asking user"</span>)</span><br><span class="line"><span class="comment"># parse all arguments from command line</span></span><br><span class="line">args, unknownargs = parser.parse_known_args()</span><br><span class="line"></span><br><span class="line"><span class="comment">#answer=args.testflag**2</span></span><br><span class="line"><span class="keyword">if</span> args.testflag==<span class="number">1</span>:</span><br><span class="line">    print(<span class="string">"test success"</span>)</span><br><span class="line">list=args.list;</span><br><span class="line">answer=list[<span class="number">0</span>]**list[<span class="number">1</span>]</span><br><span class="line"><span class="keyword">if</span> args.verbosity==<span class="number">1</span>:</span><br><span class="line">    <span class="keyword">print</span><span class="string">"the number &#123;0&#125; power &#123;1&#125; is &#123;2&#125;"</span>.format(list[<span class="number">0</span>], list[<span class="number">1</span>], answer)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(answer)</span><br></pre></td></tr></table></figure>
+<h3 id="Tricks"><a href="#Tricks" class="headerlink" title="Tricks"></a>Tricks</h3><p>Usally, when we apply argpare, it means we what some input from command line. But it’s quite unconvinient in developing or debug process. Besides, if you want it could be both command line entrance or importable interface, argparse also provide this option.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(arg_input=None)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> arg_input:</span><br><span class="line">        args, unknownargs = parser.parse_known_args(arg_input.split())</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        args, unknownargs = parser.parse_known_args()</span><br><span class="line">    <span class="keyword">return</span> args, unknownargs</span><br></pre></td></tr></table></figure>
+<h2 id="History"><a href="#History" class="headerlink" title="History:"></a>History:</h2><ul>
 <li><em>2016-09-11</em>: 将内容记录下来<br></li>
 <li><em>2016-11-06</em>: finish the coding(can’t input Chinise now~~)<br></li>
+<li><em>2019-02-06</em>: finish the coding(can’t input Chinise now~~)<br></li>
 </ul>
 
       
@@ -505,8 +493,8 @@ else:
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/11/vim-upgrade/" rel="next" title="升级旧版Vim到7.4以上">
-                <i class="fa fa-chevron-left"></i> 升级旧版Vim到7.4以上
+              <a href="/2016/09/11/vim-vundle/" rel="next" title="vim 插件安装(Vundle)">
+                <i class="fa fa-chevron-left"></i> vim 插件安装(Vundle)
               </a>
             
           </div>
@@ -515,8 +503,8 @@ else:
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/09/15/python-singleton/" rel="prev" title="Python实现单例模式">
-                Python实现单例模式 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/09/11/vim-upgrade/" rel="prev" title="升级旧版Vim到7.4以上">
+                升级旧版Vim到7.4以上 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -671,7 +659,7 @@ else:
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstrac"><span class="nav-number">1.</span> <span class="nav-text">Abstrac:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Content"><span class="nav-number">2.</span> <span class="nav-text">Content:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#History"><span class="nav-number">3.</span> <span class="nav-text">History:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Content"><span class="nav-number">2.</span> <span class="nav-text">Content:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Basic-Usage"><span class="nav-number">2.1.</span> <span class="nav-text">Basic Usage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tricks"><span class="nav-number">2.2.</span> <span class="nav-text">Tricks</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History"><span class="nav-number">3.</span> <span class="nav-text">History:</span></a></li></ol></div>
             
 
           </div>
