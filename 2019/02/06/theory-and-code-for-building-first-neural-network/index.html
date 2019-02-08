@@ -105,7 +105,7 @@
 <meta property="og:description" content="Abstract:The Deep Learning model is derived, or say inspired from neural network(NN). I derived the theory and then implement it with python to build the first extensionable NN model.">
 <meta property="og:locale" content="中文&English">
 <meta property="og:image" content="/2019/02/06/theory-and-code-for-building-first-neural-network/classification_kiank.png">
-<meta property="og:updated_time" content="2019-02-08T03:05:14.603Z">
+<meta property="og:updated_time" content="2019-02-08T03:07:49.239Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Theory and Code for Building First Neural Network">
 <meta name="twitter:description" content="Abstract:The Deep Learning model is derived, or say inspired from neural network(NN). I derived the theory and then implement it with python to build the first extensionable NN model.">
@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-02-08 11:05:14" itemprop="dateModified" datetime="2019-02-08T11:05:14+08:00">2019-02-08</time>
+                <time title="Modified: 2019-02-08 11:07:49" itemprop="dateModified" datetime="2019-02-08T11:07:49+08:00">2019-02-08</time>
               
             
           </span>
@@ -503,9 +503,37 @@
   &=-[\frac{y}{a}-\frac{1-y}{1-a}] 
 \end{align*}</script><h4 id="matrix-derivative"><a href="#matrix-derivative" class="headerlink" title="matrix derivative"></a>matrix derivative</h4><p>Now, we’re ready to calculate matrix derivative. For matrix calculation, We’ll apply Einstein sumption convention. </p>
 <p>We introduce a symbol $\epsilon_{ij}= 1$ when $j=i$, $\epsilon_{ij} = 0$ when $j\neq i$. we denote the row $i$, column $j$ eliment in matrix $M$ as $M_{ij}$. </p>
-<p>\begin{align<em>}<br>  \frac{\partial \mathcal{J}}{\partial b^{[2]}_{ij}} &amp;= \frac{\partial \mathcal{J}}{\partial A^{[2]}_{kl}}\times\frac{\partial A^{[2]}_{kl}}{\partial Z^{[2]}_{mn}}\times\frac{\partial Z^{[2]}_{mn}}{\partial b^{[2]}_{ij}} \\<br>  &amp;=-\frac{1}{m}(\frac{y_{kl}}{A^{[2]}_{kl}}-\frac{1-y_{kl}}{1-A^{[2]}_{kl}}) \times A^{[2]}_{kl}(1-A^{[2]}_{kl})\epsilon_{km}\epsilon_{ln} \times \epsilon_{mi}\epsilon_{nj} \\<br>  &amp;=-\frac{1}{m}(\frac{y_{ij}}{A^{[2]}_{ij}}-\frac{1-y_{ij}}{1-A^{[2]}_{ij}}) \times A^{[2]}_{ij}(1-A^{[2]}_{ij}) \\<br>  &amp;=-\frac{1}{m}[y_{ij}(1-A^{[2]}_{ij})-(1-y_{ij})A^{[2]}_{ij}] \\<br>  &amp;=\frac{1}{m}(A^{[2]}_{ij}-y_{ij}) \\<br>\end{align</em>}<br>\begin{align<em>}<br>  \frac{\partial \mathcal{J}}{\partial W^{[2]}_{ij}} &amp;= \frac{\partial \mathcal{J}}{\partial A^{[2]}_{kl}}\times\frac{\partial A^{[2]}_{kl}}{\partial Z^{[2]}_{mn}}\times\frac{\partial Z^{[2]}_{mn}}{\partial W^{[2]}_{ij}} \\<br>  &amp;=-\frac{1}{m}(\frac{y_{kl}}{A^{[2]}_{kl}}-\frac{1-y_{kl}}{1-A^{[2]}_{kl}}) \times A^{[2]}_{kl}(1-A^{[2]}_{kl})\epsilon_{km}\epsilon_{ln} \times A^{[1]}_{jn}\epsilon_{mi} \\<br>  &amp;=-\frac{1}{m}(\frac{y_{in}}{A^{[2]}_{in}}-\frac{1-y_{in}}{1-A^{[2]}_{in}}) \times A^{[2]}_{in}(1-A^{[2]}_{in}) \times A^{[1]}_{jn} \\<br>  &amp;=-\frac{1}{m}[y_{in}(1-A^{[2]}_{in})-(1-y_{in})A^{[2]}_{in}] \times A^{[1]}_{jn} \\<br>  &amp;=\frac{1}{m}(A^{[2]}_{in}-y_{in}) \times A^{[1]}_{jn} \\<br>\end{align</em>}</p>
-<p>\begin{align<em>}<br>  \frac{\partial \mathcal{J}}{\partial b^{[1]}_{ij}} &amp;= \frac{\partial \mathcal{J}}{\partial A^{[2]}_{kl}}\times\frac{\partial A^{[2]}_{kl}}{\partial Z^{[2]}_{mn}} \times \frac{\partial Z^{[2]}_{mn}}{\partial A^{[1]}_{gh}} \times \frac{\partial A^{[1]}_{gh}}{\partial Z^{[1]}_{op}}  \times \frac{\partial Z^{[1]}_{op}}{\partial b^{[1]}_{ij}}\\<br>  &amp;=-\frac{1}{m}(\frac{y_{kl}}{A^{[2]}_{kl}}-\frac{1-y_{kl}}{1-A^{[2]}_{kl}}) \times A^{[2]}_{kl}(1-A^{[2]}_{kl})\epsilon_{km}\epsilon_{ln} \times W^{[2]}_{mg}\epsilon_{nh} \times A^{[1]}_{gh}(1-A^{[1]}_{gh})\epsilon_{go}\epsilon_{hp} \times \epsilon_{io}\epsilon_{jp}\\<br>  &amp;=-\frac{1}{m}(\frac{y_{kj}}{A^{[2]}_{kj}}-\frac{1-y_{kj}}{1-A^{[2]}_{kj}}) \times A^{[2]}_{kj}(1-A^{[2]}_{kj}) \times W^{[2]}_{ki} \times A^{[1]}_{ij}(1-A^{[1]}_{ij})\\<br>  &amp;=-\frac{1}{m}[y_{kj}(1-A^{[2]}_{kj})-(1-y_{kj})A^{[2]}_{kj}] \times W^{[2]}_{ki} \times A^{[1]}_{ij}(1-A^{[1]}_{ij}) \\<br>  &amp;=\frac{1}{m}(A^{[2]}_{kj}-y_{kj}) \times W^{[2]}_{ki} \times A^{[1]}_{ij}(1-A^{[1]}_{ij}) \\<br>\end{align</em>}</p>
-<p>\begin{align<em>}<br>  \frac{\partial \mathcal{J}}{\partial W^{[1]}_{ij}} &amp;= \frac{\partial \mathcal{J}}{\partial A^{[2]}_{kl}}\times\frac{\partial A^{[2]}_{kl}}{\partial Z^{[2]}_{mn}} \times \frac{\partial Z^{[2]}_{mn}}{\partial A^{[1]}_{gh}} \times \frac{\partial A^{[1]}_{gh}}{\partial Z^{[1]}_{op}}  \times \frac{\partial Z^{[1]}_{op}}{\partial W^{[1]}_{ij}}\\<br>  &amp;=-\frac{1}{m}(\frac{y_{kl}}{A^{[2]}_{kl}}-\frac{1-y_{kl}}{1-A^{[2]}_{kl}}) \times A^{[2]}_{kl}(1-A^{[2]}_{kl})\epsilon_{km}\epsilon_{ln} \times W^{[2]}_{mg}\epsilon_{nh} \times A^{[1]}_{gh}(1-A^{[1]}_{gh})\epsilon_{go}\epsilon_{hp} \times A^{[0]}_{jp}\epsilon_{io}\\<br>  &amp;=-\frac{1}{m}(\frac{y_{kl}}{A^{[2]}_{kl}}-\frac{1-y_{kl}}{1-A^{[2]}_{kl}}) \times A^{[2]}_{kl}(1-A^{[2]}_{kl}) \times W^{[2]}_{ki} \times A^{[1]}_{il}(1-A^{[1]}_{il}) \times A^{[0]}_{jl}\\<br>  &amp;=-\frac{1}{m}[y_{kl}(1-A^{[2]}_{kl})-(1-y_{kl})A^{[2]}_{kl}] \times W^{[2]}_{ki} \times A^{[1]}_{il}(1-A^{[1]}_{il}) \times A^{[0]}_{jl} \\<br>  &amp;=\frac{1}{m}(A^{[2]}_{kl}-y_{kl}) \times W^{[2]}_{ki} \times A^{[1]}_{il}(1-A^{[1]}_{il}) \times A^{[0]}_{jl} \\<br>\end{align</em>}<br>Since we apply broadcasting, we have $b^{[l]}_{ij} = b^{[l]}_{ik}$ for any $i, j, k, l$. So we could denote $b^{[l]}_i = b^{[l]}_{ij}$. And all the derivative $db^{[l]}_{ij}$ could contribute(add up) to $db^{[l]}_{i}$. In other words, $db^{[l]}_{i} = \sum_{j=1}^{m}db^{[l]}_{ij}$</p>
+<script type="math/tex; mode=display">
+\begin{align*} 
+  \frac{\partial \mathcal{J}}{\partial b^{[2]}_{ij}} &= \frac{\partial \mathcal{J}}{\partial A^{[2]}_{kl}}\times\frac{\partial A^{[2]}_{kl}}{\partial Z^{[2]}_{mn}}\times\frac{\partial Z^{[2]}_{mn}}{\partial b^{[2]}_{ij}} \\
+  &=-\frac{1}{m}(\frac{y_{kl}}{A^{[2]}_{kl}}-\frac{1-y_{kl}}{1-A^{[2]}_{kl}}) \times A^{[2]}_{kl}(1-A^{[2]}_{kl})\epsilon_{km}\epsilon_{ln} \times \epsilon_{mi}\epsilon_{nj} \\
+  &=-\frac{1}{m}(\frac{y_{ij}}{A^{[2]}_{ij}}-\frac{1-y_{ij}}{1-A^{[2]}_{ij}}) \times A^{[2]}_{ij}(1-A^{[2]}_{ij}) \\
+  &=-\frac{1}{m}[y_{ij}(1-A^{[2]}_{ij})-(1-y_{ij})A^{[2]}_{ij}] \\
+  &=\frac{1}{m}(A^{[2]}_{ij}-y_{ij}) \\
+\end{align*}
+\begin{align*}
+  \frac{\partial \mathcal{J}}{\partial W^{[2]}_{ij}} &= \frac{\partial \mathcal{J}}{\partial A^{[2]}_{kl}}\times\frac{\partial A^{[2]}_{kl}}{\partial Z^{[2]}_{mn}}\times\frac{\partial Z^{[2]}_{mn}}{\partial W^{[2]}_{ij}} \\
+  &=-\frac{1}{m}(\frac{y_{kl}}{A^{[2]}_{kl}}-\frac{1-y_{kl}}{1-A^{[2]}_{kl}}) \times A^{[2]}_{kl}(1-A^{[2]}_{kl})\epsilon_{km}\epsilon_{ln} \times A^{[1]}_{jn}\epsilon_{mi} \\
+  &=-\frac{1}{m}(\frac{y_{in}}{A^{[2]}_{in}}-\frac{1-y_{in}}{1-A^{[2]}_{in}}) \times A^{[2]}_{in}(1-A^{[2]}_{in}) \times A^{[1]}_{jn} \\
+  &=-\frac{1}{m}[y_{in}(1-A^{[2]}_{in})-(1-y_{in})A^{[2]}_{in}] \times A^{[1]}_{jn} \\
+  &=\frac{1}{m}(A^{[2]}_{in}-y_{in}) \times A^{[1]}_{jn} \\ 
+\end{align*}
+
+\begin{align*}
+  \frac{\partial \mathcal{J}}{\partial b^{[1]}_{ij}} &= \frac{\partial \mathcal{J}}{\partial A^{[2]}_{kl}}\times\frac{\partial A^{[2]}_{kl}}{\partial Z^{[2]}_{mn}} \times \frac{\partial Z^{[2]}_{mn}}{\partial A^{[1]}_{gh}} \times \frac{\partial A^{[1]}_{gh}}{\partial Z^{[1]}_{op}}  \times \frac{\partial Z^{[1]}_{op}}{\partial b^{[1]}_{ij}}\\
+  &=-\frac{1}{m}(\frac{y_{kl}}{A^{[2]}_{kl}}-\frac{1-y_{kl}}{1-A^{[2]}_{kl}}) \times A^{[2]}_{kl}(1-A^{[2]}_{kl})\epsilon_{km}\epsilon_{ln} \times W^{[2]}_{mg}\epsilon_{nh} \times A^{[1]}_{gh}(1-A^{[1]}_{gh})\epsilon_{go}\epsilon_{hp} \times \epsilon_{io}\epsilon_{jp}\\
+  &=-\frac{1}{m}(\frac{y_{kj}}{A^{[2]}_{kj}}-\frac{1-y_{kj}}{1-A^{[2]}_{kj}}) \times A^{[2]}_{kj}(1-A^{[2]}_{kj}) \times W^{[2]}_{ki} \times A^{[1]}_{ij}(1-A^{[1]}_{ij})\\
+  &=-\frac{1}{m}[y_{kj}(1-A^{[2]}_{kj})-(1-y_{kj})A^{[2]}_{kj}] \times W^{[2]}_{ki} \times A^{[1]}_{ij}(1-A^{[1]}_{ij}) \\
+  &=\frac{1}{m}(A^{[2]}_{kj}-y_{kj}) \times W^{[2]}_{ki} \times A^{[1]}_{ij}(1-A^{[1]}_{ij}) \\
+\end{align*}
+
+\begin{align*}
+  \frac{\partial \mathcal{J}}{\partial W^{[1]}_{ij}} &= \frac{\partial \mathcal{J}}{\partial A^{[2]}_{kl}}\times\frac{\partial A^{[2]}_{kl}}{\partial Z^{[2]}_{mn}} \times \frac{\partial Z^{[2]}_{mn}}{\partial A^{[1]}_{gh}} \times \frac{\partial A^{[1]}_{gh}}{\partial Z^{[1]}_{op}}  \times \frac{\partial Z^{[1]}_{op}}{\partial W^{[1]}_{ij}}\\
+  &=-\frac{1}{m}(\frac{y_{kl}}{A^{[2]}_{kl}}-\frac{1-y_{kl}}{1-A^{[2]}_{kl}}) \times A^{[2]}_{kl}(1-A^{[2]}_{kl})\epsilon_{km}\epsilon_{ln} \times W^{[2]}_{mg}\epsilon_{nh} \times A^{[1]}_{gh}(1-A^{[1]}_{gh})\epsilon_{go}\epsilon_{hp} \times A^{[0]}_{jp}\epsilon_{io}\\
+  &=-\frac{1}{m}(\frac{y_{kl}}{A^{[2]}_{kl}}-\frac{1-y_{kl}}{1-A^{[2]}_{kl}}) \times A^{[2]}_{kl}(1-A^{[2]}_{kl}) \times W^{[2]}_{ki} \times A^{[1]}_{il}(1-A^{[1]}_{il}) \times A^{[0]}_{jl}\\
+  &=-\frac{1}{m}[y_{kl}(1-A^{[2]}_{kl})-(1-y_{kl})A^{[2]}_{kl}] \times W^{[2]}_{ki} \times A^{[1]}_{il}(1-A^{[1]}_{il}) \times A^{[0]}_{jl} \\
+  &=\frac{1}{m}(A^{[2]}_{kl}-y_{kl}) \times W^{[2]}_{ki} \times A^{[1]}_{il}(1-A^{[1]}_{il}) \times A^{[0]}_{jl} \\
+\end{align*}</script><p>Since we apply broadcasting, we have $b^{[l]}_{ij} = b^{[l]}_{ik}$ for any $i, j, k, l$. So we could denote $b^{[l]}_i = b^{[l]}_{ij}$. And all the derivative $db^{[l]}_{ij}$ could contribute(add up) to $db^{[l]}_{i}$. In other words, $db^{[l]}_{i} = \sum_{j=1}^{m}db^{[l]}_{ij}$</p>
 <p>Based on Einstein sumption convention, above equation can be transfered as matrix equation:</p>
 <script type="math/tex; mode=display">
 \begin{align*}
