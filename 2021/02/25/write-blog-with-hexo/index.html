@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="中文&English">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="AbstractBefore hexo, I use jekyll to build my blog on github.but after I migrate to mac ox, I found hexo would be faster and convenient.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Write Blog With Hexo">
+<meta property="og:url" content="www.deardon.win/2021/02/25/write-blog-with-hexo/index.html">
+<meta property="og:site_name" content="D.P">
+<meta property="og:description" content="AbstractBefore hexo, I use jekyll to build my blog on github.but after I migrate to mac ox, I found hexo would be faster and convenient.">
+<meta property="og:locale" content="中文&English">
+<meta property="og:updated_time" content="2021-02-25T08:09:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Write Blog With Hexo">
+<meta name="twitter:description" content="AbstractBefore hexo, I use jekyll to build my blog on github.but after I migrate to mac ox, I found hexo would be faster and convenient.">
+
+
+
+
+
+
+  <link rel="canonical" href="www.deardon.win/2021/02/25/write-blog-with-hexo/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Write Blog With Hexo | D.P</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="中文&English">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">D.P</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">The Pages</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">5</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories<span class="badge">7</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">18</span></a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.deardon.win/2021/02/25/write-blog-with-hexo/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Don">
+      <meta itemprop="description" content="学习，记录，交流，分享...">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="D.P">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Write Blog With Hexo
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2021-02-25 16:09:45" itemprop="dateCreated datePublished" datetime="2021-02-25T16:09:45+08:00">2021-02-25</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>Before hexo, I use jekyll to build my blog on github.<br>but after I migrate to mac ox, I found hexo would be faster and convenient.<br><a id="more"></a></p>
+<h2 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h2><h3 id="install-hexo"><a href="#install-hexo" class="headerlink" title="install hexo"></a>install hexo</h3><p>install hexo, refer to <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">install</a>.<br>One thing to be careful about is to install node.js as precondition.</p>
+<p>In this post, I mainly focus on record my practice to write blog with hexo.</p>
+<h3 id="write-with-hexo"><a href="#write-with-hexo" class="headerlink" title="write with hexo"></a>write with hexo</h3><p>There are mainly two ways to write a post and deploy it to blog server(github).</p>
+<h4 id="draft-firstly-then-complate-post-recommended"><a href="#draft-firstly-then-complate-post-recommended" class="headerlink" title="draft firstly, then complate post(recommended)"></a>draft firstly, then complate post(recommended)</h4><p>It’s suggested to record idea quickly in draft, and complete them later.<br><em>draft</em> is a special layout, it’s not just layout format as others.<br>the special point is such ‘draft’ file would be located under <code>source/_drafts</code>.<br>so when you review your post locally or deploy it remotely, ‘draft’ are ignored.</p>
+<p>Following are the steps to write in this draft -&gt; post way on my mac os.</p>
+<ol>
+<li><code>cd Workspace/Hexo</code>: go into the hexo folder</li>
+<li><code>hexo new draft &quot;draft name&quot;</code>: create draft file,<br>where you can record idea quickly. Since I configured default layout as draft,<br>you can reduce the command to <code>hexo new &quot;draft name&quot;</code>.</li>
+<li><code>hexo publish post &quot;draft name&quot;</code>: migrate from <code>source/_drafts</code> to <code>source/_posts</code><br>and format it based on “scaffolds/post.md”. You should only do it when the draft<br>is ready to bee seen as post(with pretty format to deploy).</li>
+<li><code>hexo server</code>: start local server to reviw your post locally.</li>
+<li><code>hexo deploy --generate</code>: deploy it on github to share outside, it would deploy<br>all post.  So if you don’t want to deploy some contents, keep in as draft.</li>
+</ol>
+<h4 id="write-post-directly"><a href="#write-post-directly" class="headerlink" title="write post directly"></a>write post directly</h4><p>if you plan to start draft and complete this post in short time and deploy it,<br> you don’t need to draft firstly. you can go this way.</p>
+<ol>
+<li><code>cd Workspace/Hexo</code>: go into the hexo folder</li>
+<li><code>hexo new post &quot;post name&quot;</code>: create post file directly and you complete your post.</li>
+<li><code>hexo server</code>: start local server to reviw your post locally.</li>
+<li><code>hexo deploy --generate</code>: deploy it on github to share outside, it would deploy<br>all post.</li>
+</ol>
+<h2 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h2><h3 id="do-I-need-to-care-space-and-title-case-in-“post-name”-or-“draft-name”"><a href="#do-I-need-to-care-space-and-title-case-in-“post-name”-or-“draft-name”" class="headerlink" title="do I need to care space and title case in “post name” or “draft name”?"></a>do I need to care space and title case in “post name” or “draft name”?</h3><p>For space, as we know, file name don’t support space(linux).<br>the hexo would smartly transfer the space to ‘-‘.</p>
+<p>For title case, hexo do support titlecase for words in “post name” or “draft name”.<br>I’ve already configured it in <code>_config.yml</code>.<br>So when you see it on browser, it would fit the tile case smartly.</p>
+<p>In conclusion, we would write our post or draft name as “post name”.<br>all words in small case and surrounded by quote “.</p>
+<h3 id="why-the-updated-field-don’t-work"><a href="#why-the-updated-field-don’t-work" class="headerlink" title="why the updated field don’t work?"></a>why the updated field don’t work?</h3><p>This field <em>udpated</em> is used to show edit time.<br>It work with field <em>date</em>, which is used to show create time.<br>the edit time would only be shown in browser when <em>udpated</em> time is later then <em>date</em></p>
+<p>I kept this field only for your future usage when you updated your page later.<br>The default time I give <em>updated</em> is the same as <em>date</em>. You can change it manually<br> if you updated the page in the future.</p>
+<h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/06/theory-and-code-for-building-first-neural-network/" rel="next" title="Theory and Code for Building First Neural Network">
+                <i class="fa fa-chevron-left"></i> Theory and Code for Building First Neural Network
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Don</p>
+              <p class="site-description motion-element" itemprop="description">学习，记录，交流，分享...</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Content"><span class="nav-number">2.</span> <span class="nav-text">Content</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#install-hexo"><span class="nav-number">2.1.</span> <span class="nav-text">install hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#write-with-hexo"><span class="nav-number">2.2.</span> <span class="nav-text">write with hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#draft-firstly-then-complate-post-recommended"><span class="nav-number">2.2.1.</span> <span class="nav-text">draft firstly, then complate post(recommended)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#write-post-directly"><span class="nav-number">2.2.2.</span> <span class="nav-text">write post directly</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Questions"><span class="nav-number">3.</span> <span class="nav-text">Questions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#do-I-need-to-care-space-and-title-case-in-“post-name”-or-“draft-name”"><span class="nav-number">3.1.</span> <span class="nav-text">do I need to care space and title case in “post name” or “draft name”?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#why-the-updated-field-don’t-work"><span class="nav-number">3.2.</span> <span class="nav-text">why the updated field don’t work?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History"><span class="nav-number">4.</span> <span class="nav-text">History</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Don</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.7.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=6.7.0"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
