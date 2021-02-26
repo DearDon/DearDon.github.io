@@ -96,17 +96,18 @@
 
 
 
-  <meta name="description" content="AbstractBefore hexo, I use jekyll to build my blog on github.but after I migrate to mac ox, I found hexo would be faster and convenient.">
+  <meta name="description" content="AbstractBefore hexo, I use jekyll to build my blog on github. But after I migrate to mac ox, I found hexo would be faster and convenient.">
+<meta name="keywords" content="writing markdown">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Write Blog With Hexo">
 <meta property="og:url" content="www.deardon.win/2021/02/25/write-blog-with-hexo/index.html">
 <meta property="og:site_name" content="D.P">
-<meta property="og:description" content="AbstractBefore hexo, I use jekyll to build my blog on github.but after I migrate to mac ox, I found hexo would be faster and convenient.">
+<meta property="og:description" content="AbstractBefore hexo, I use jekyll to build my blog on github. But after I migrate to mac ox, I found hexo would be faster and convenient.">
 <meta property="og:locale" content="中文&English">
-<meta property="og:updated_time" content="2021-02-25T08:09:45.000Z">
+<meta property="og:updated_time" content="2021-02-26T08:17:43.056Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Write Blog With Hexo">
-<meta name="twitter:description" content="AbstractBefore hexo, I use jekyll to build my blog on github.but after I migrate to mac ox, I found hexo would be faster and convenient.">
+<meta name="twitter:description" content="AbstractBefore hexo, I use jekyll to build my blog on github. But after I migrate to mac ox, I found hexo would be faster and convenient.">
 
 
 
@@ -244,7 +245,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">5</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">7</span></a>
 
   </li>
         
@@ -263,7 +264,7 @@
       
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories<span class="badge">7</span></a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories<span class="badge">8</span></a>
 
   </li>
         
@@ -381,8 +382,42 @@
             
 
             
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2021-02-26 16:17:43" itemprop="dateModified" datetime="2021-02-26T16:17:43+08:00">2021-02-26</time>
+              
+            
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tools/" itemprop="url" rel="index"><span itemprop="name">tools</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -412,32 +447,72 @@
       
 
       
-        <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>Before hexo, I use jekyll to build my blog on github.<br>but after I migrate to mac ox, I found hexo would be faster and convenient.<br><a id="more"></a></p>
-<h2 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h2><h3 id="install-hexo"><a href="#install-hexo" class="headerlink" title="install hexo"></a>install hexo</h3><p>install hexo, refer to <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">install</a>.<br>One thing to be careful about is to install node.js as precondition.</p>
+        <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>Before hexo, I use jekyll to build my blog on github.
+But after I migrate to mac ox, I found hexo would be faster and convenient.
+<a id="more"></a></p>
+<h2 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h2><h3 id="install-hexo"><a href="#install-hexo" class="headerlink" title="install hexo"></a>install hexo</h3><p>To install hexo, please refer to <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">install</a>.
+One thing to be careful about is to install node.js as precondition.</p>
 <p>In this post, I mainly focus on record my practice to write blog with hexo.</p>
 <h3 id="write-with-hexo"><a href="#write-with-hexo" class="headerlink" title="write with hexo"></a>write with hexo</h3><p>There are mainly two ways to write a post and deploy it to blog server(github).</p>
-<h4 id="draft-firstly-then-complate-post-recommended"><a href="#draft-firstly-then-complate-post-recommended" class="headerlink" title="draft firstly, then complate post(recommended)"></a>draft firstly, then complate post(recommended)</h4><p>It’s suggested to record idea quickly in draft, and complete them later.<br><em>draft</em> is a special layout, it’s not just layout format as others.<br>the special point is such ‘draft’ file would be located under <code>source/_drafts</code>.<br>so when you review your post locally or deploy it remotely, ‘draft’ are ignored.</p>
+<h4 id="draft-firstly-then-complate-post-recommended"><a href="#draft-firstly-then-complate-post-recommended" class="headerlink" title="draft firstly, then complate post(recommended)"></a>draft firstly, then complate post(recommended)</h4><p>It’s suggested to record idea quickly in draft, and complete them later.
+<em>draft</em> is a special layout, it’s not just layout format as others.
+the special point is such <em>draft</em> file would be located under <strong><em>source/_drafts</em></strong>.
+so when you review your post locally or deploy it remotely, <em>draft</em> are ignored.</p>
 <p>Following are the steps to write in this draft -&gt; post way on my mac os.</p>
 <ol>
 <li><code>cd Workspace/Hexo</code>: go into the hexo folder</li>
-<li><code>hexo new draft &quot;draft name&quot;</code>: create draft file,<br>where you can record idea quickly. Since I configured default layout as draft,<br>you can reduce the command to <code>hexo new &quot;draft name&quot;</code>.</li>
-<li><code>hexo publish post &quot;draft name&quot;</code>: migrate from <code>source/_drafts</code> to <code>source/_posts</code><br>and format it based on “scaffolds/post.md”. You should only do it when the draft<br>is ready to bee seen as post(with pretty format to deploy).</li>
-<li><code>hexo server</code>: start local server to reviw your post locally.</li>
-<li><code>hexo deploy --generate</code>: deploy it on github to share outside, it would deploy<br>all post.  So if you don’t want to deploy some contents, keep in as draft.</li>
+<li><code>hexo new draft &quot;draft name&quot;</code>: create draft file,
+where you can record idea quickly. Since I configured default layout as draft,
+you can reduce the command to <code>hexo n &quot;draft name&quot;</code>.</li>
+<li><code>hexo p post &quot;draft name&quot;</code> or <code>hexo publish post &quot;draft name&quot;</code>: migrate from
+<strong><em>source/_drafts</em></strong> to <strong><em>source/_posts</em></strong> with same file name but with data prefix.
+and format it based on <strong><em>scaffolds/post.md</em></strong>. You should only do it when the draft
+is ready to bee seen as post(with pretty format to deploy).</li>
+<li><code>hexo s</code> or <code>hexo server</code>: start local server to reviw your post locally.
+you don’t need to generate static files if you review lolocally</li>
+<li><code>hexo g</code> or <code>hexo generate</code>: generate static files in need(would skip the file
+have no change if public exist).</li>
+<li><code>hexo d</code> or <code>hexo deploy</code>: deploy static fiels on github to share outside,
+it would deploy all post.  So if you don’t want to deploy some contents, keep them
+in as draft.</li>
 </ol>
-<h4 id="write-post-directly"><a href="#write-post-directly" class="headerlink" title="write post directly"></a>write post directly</h4><p>if you plan to start draft and complete this post in short time and deploy it,<br> you don’t need to draft firstly. you can go this way.</p>
+<h4 id="write-post-directly"><a href="#write-post-directly" class="headerlink" title="write post directly"></a>write post directly</h4><p>if you plan to start draft and complete this post in short time and deploy it,
+you don’t need to draft firstly. you can go this way. the server, generate and deploy
+steps are the same as above.</p>
 <ol>
 <li><code>cd Workspace/Hexo</code>: go into the hexo folder</li>
-<li><code>hexo new post &quot;post name&quot;</code>: create post file directly and you complete your post.</li>
-<li><code>hexo server</code>: start local server to reviw your post locally.</li>
-<li><code>hexo deploy --generate</code>: deploy it on github to share outside, it would deploy<br>all post.</li>
+<li><code>hexo n post &quot;post name&quot;</code>: create post file directly and you complete your post.</li>
+<li><code>hexo s</code>: start local server to reviw your post locally.</li>
+<li><code>hexo g</code>: generate static files in need.</li>
+<li><code>hexo d</code>: deploy it on github to share outside, it would deploy
+all post.</li>
 </ol>
-<h2 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h2><h3 id="do-I-need-to-care-space-and-title-case-in-“post-name”-or-“draft-name”"><a href="#do-I-need-to-care-space-and-title-case-in-“post-name”-or-“draft-name”" class="headerlink" title="do I need to care space and title case in “post name” or “draft name”?"></a>do I need to care space and title case in “post name” or “draft name”?</h3><p>For space, as we know, file name don’t support space(linux).<br>the hexo would smartly transfer the space to ‘-‘.</p>
-<p>For title case, hexo do support titlecase for words in “post name” or “draft name”.<br>I’ve already configured it in <code>_config.yml</code>.<br>So when you see it on browser, it would fit the tile case smartly.</p>
-<p>In conclusion, we would write our post or draft name as “post name”.<br>all words in small case and surrounded by quote “.</p>
-<h3 id="why-the-updated-field-don’t-work"><a href="#why-the-updated-field-don’t-work" class="headerlink" title="why the updated field don’t work?"></a>why the updated field don’t work?</h3><p>This field <em>udpated</em> is used to show edit time.<br>It work with field <em>date</em>, which is used to show create time.<br>the edit time would only be shown in browser when <em>udpated</em> time is later then <em>date</em></p>
-<p>I kept this field only for your future usage when you updated your page later.<br>The default time I give <em>updated</em> is the same as <em>date</em>. You can change it manually<br> if you updated the page in the future.</p>
-<h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2>
+<h2 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h2><h3 id="❓-do-I-need-to-care-space-and-title-case-in-“post-name”-or-“draft-name”"><a href="#❓-do-I-need-to-care-space-and-title-case-in-“post-name”-or-“draft-name”" class="headerlink" title=":❓ do I need to care space and title case in “post name” or “draft name”?"></a>:❓ do I need to care space and title case in “post name” or “draft name”?</h3><p>For space, as we know, file name don’t support space(linux).
+the hexo would smartly transfer the space to ‘-‘ symbol.</p>
+<p>For title case, hexo do support show titlecase on browser for words in “post name”
+or “draft name”.  I’ve already configured it in <strong><em>_config.yml</em></strong> <em>titlecase: true</em>.
+So when you see it on browser, it would fit the tile case smartly.</p>
+<p>For file case, hexo also support to transfer lower cases or upper cases from
+“post name” or “draft name” to file name. I’ve configured it in <strong><em>_config.yml</em></strong>
+<em>filename_case: 1</em>.</p>
+<p>In conclusion, we would write our post or draft name as “post name”.
+<strong>you really don’t need to care lower or upper case issue</strong>, choose whatever you
+like. hexo would take care of showing and filename transfer.
+<strong>But you must keep the space surrounded by quote “”</strong>.</p>
+<h3 id="❓-why-the-updated-field-don’t-work"><a href="#❓-why-the-updated-field-don’t-work" class="headerlink" title=":❓ why the updated field don’t work?"></a>:❓ why the updated field don’t work?</h3><p>This field <em>udpated</em> is used to show edit time and defined in front-matter of a post.
+It work with field <em>date</em>, which is used to show create time.
+the edit time would only be shown in browser when <em>udpated</em> time is later then <em>date</em></p>
+<p>So if you edit it manually, it would only work when it’s later than created time.</p>
+<p>Another option is configuring <a href="https://hexo.io/docs/configuration#Date-Time-format" target="_blank" rel="noopener"><em>updated_option: date</em></a>
+in <strong><em>_config.yml</em></strong>, it would use the current date time(the day you edit) as
+edit time.</p>
+<h3 id="❓-any-suggestions-to-apply-address-symbol-for-text"><a href="#❓-any-suggestions-to-apply-address-symbol-for-text" class="headerlink" title=":❓ any suggestions to apply address symbol for text?"></a>:❓ any suggestions to apply address symbol for text?</h3><p>In markdown, there are are several types of ways to addressing text.
+my practice is likw below.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*specific terms, like defination, parmas, options*</span><br><span class="line">**words you want to address, like conclusion**</span><br><span class="line">***file/folder names***</span><br><span class="line">~~obsolete text but you want to remove~~</span><br><span class="line">`executable commands`</span><br></pre></td></tr></table></figure>
+<h3 id="❓-what’s-the-markdown-in-front-matter-of-post-used-for"><a href="#❓-what’s-the-markdown-in-front-matter-of-post-used-for" class="headerlink" title=":❓ what’s the markdown in front-matter of post used for?"></a>:❓ what’s the markdown in front-matter of post used for?</h3><p>I know it’s kind of wired, but since hexo markdown don’t support convergence of
+lines without empty line by default. we need to configure it to merge the lines
+without breaking by empty line as a paragraph.</p>
+
       
     </div>
 
@@ -457,6 +532,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/writing-markdown/" rel="tag"># writing markdown</a>
+          
+        </div>
       
 
       
@@ -572,7 +653,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -595,7 +678,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -631,7 +718,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Content"><span class="nav-number">2.</span> <span class="nav-text">Content</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#install-hexo"><span class="nav-number">2.1.</span> <span class="nav-text">install hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#write-with-hexo"><span class="nav-number">2.2.</span> <span class="nav-text">write with hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#draft-firstly-then-complate-post-recommended"><span class="nav-number">2.2.1.</span> <span class="nav-text">draft firstly, then complate post(recommended)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#write-post-directly"><span class="nav-number">2.2.2.</span> <span class="nav-text">write post directly</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Questions"><span class="nav-number">3.</span> <span class="nav-text">Questions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#do-I-need-to-care-space-and-title-case-in-“post-name”-or-“draft-name”"><span class="nav-number">3.1.</span> <span class="nav-text">do I need to care space and title case in “post name” or “draft name”?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#why-the-updated-field-don’t-work"><span class="nav-number">3.2.</span> <span class="nav-text">why the updated field don’t work?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History"><span class="nav-number">4.</span> <span class="nav-text">History</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Content"><span class="nav-number">2.</span> <span class="nav-text">Content</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#install-hexo"><span class="nav-number">2.1.</span> <span class="nav-text">install hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#write-with-hexo"><span class="nav-number">2.2.</span> <span class="nav-text">write with hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#draft-firstly-then-complate-post-recommended"><span class="nav-number">2.2.1.</span> <span class="nav-text">draft firstly, then complate post(recommended)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#write-post-directly"><span class="nav-number">2.2.2.</span> <span class="nav-text">write post directly</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Questions"><span class="nav-number">3.</span> <span class="nav-text">Questions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#❓-do-I-need-to-care-space-and-title-case-in-“post-name”-or-“draft-name”"><span class="nav-number">3.1.</span> <span class="nav-text">:❓ do I need to care space and title case in “post name” or “draft name”?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#❓-why-the-updated-field-don’t-work"><span class="nav-number">3.2.</span> <span class="nav-text">:❓ why the updated field don’t work?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#❓-any-suggestions-to-apply-address-symbol-for-text"><span class="nav-number">3.3.</span> <span class="nav-text">:❓ any suggestions to apply address symbol for text?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#❓-what’s-the-markdown-in-front-matter-of-post-used-for"><span class="nav-number">3.4.</span> <span class="nav-text">:❓ what’s the markdown in front-matter of post used for?</span></a></li></ol></li></ol></div>
             
 
           </div>
