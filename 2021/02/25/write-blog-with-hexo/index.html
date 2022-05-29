@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="D.P">
 <meta property="og:description" content="AbstractBefore hexo, I use jekyll to build my blog on github. But after I migrate to mac ox, I found hexo would be faster and more convenient. In this post, I mainly focus on record my practice to wri">
 <meta property="og:locale" content="中文&English">
-<meta property="og:updated_time" content="2021-02-26T09:44:20.609Z">
+<meta property="og:updated_time" content="2021-02-28T03:04:57.974Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Write Blog With Hexo">
 <meta name="twitter:description" content="AbstractBefore hexo, I use jekyll to build my blog on github. But after I migrate to mac ox, I found hexo would be faster and more convenient. In this post, I mainly focus on record my practice to wri">
@@ -245,7 +245,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">21</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">24</span></a>
 
   </li>
         
@@ -283,7 +283,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">18</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">22</span></a>
 
   </li>
 
@@ -395,7 +395,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2021-02-26 17:44:20" itemprop="dateModified" datetime="2021-02-26T17:44:20+08:00">2021-02-26</time>
+                <time title="Modified: 2021-02-28 11:04:57" itemprop="dateModified" datetime="2021-02-28T11:04:57+08:00">2021-02-28</time>
               
             
           </span>
@@ -463,7 +463,10 @@ so when you review your post locally or deploy it remotely, <em>draft</em> are i
 <li><p>Go into the hexo folder</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> Workspace/Hexo</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Create draft file, where you can record idea quickly.</p>
+<li><p>Create draft file, where you can record idea quickly.
+Draft would be ingored when generating static files and deploying.
+And you can configure <strong><em>_config.yml</em></strong> <em>render_drafts: false</em> to hide them
+in local server review.</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new draft <span class="string">"draft name"</span></span><br></pre></td></tr></table></figure>
 <p> Since I configured default layout as draft, and hexo support short represent
   of command, such as <em>new</em> can be simplified as <em>n</em>. You can input command</p>
@@ -472,7 +475,8 @@ so when you review your post locally or deploy it remotely, <em>draft</em> are i
 <li><p>Publish your draft, which is migrate from
 <strong><em>source/_drafts</em></strong> to <strong><em>source/_posts</em></strong> with same file name but with data prefix.
 and format it based on <strong><em>scaffolds/post.md</em></strong>. You should only do it when the draft
-is ready to bee seen as post to format looking. Following <em>p</em> is short for <em>publish</em></p>
+is ready to bee seen as post to format looking.
+Following <em>p</em> is short for <em>publish</em></p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo p post <span class="string">"draft name"</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Start local server to review your post locally.
@@ -486,12 +490,14 @@ you to check your source post with command line spell check tool.</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aspell -c your_post_file</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Generate static files in need(would skip the file have no change if public exist).
+All changed posts would be generated with static files.
 Follwing <em>g</em> is short for <em>generate</em>.</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Deploy static fields on github to share outside,
-it would deploy all post.  So if you don’t want to deploy some contents, keep them
-in as draft. Following <em>d</em> is short for <em>deploy</em>.</p>
+it would deploy all static files from last step.
+So if you don’t want to deploy some contents, keep them in as draft.
+Following <em>d</em> is short for <em>deploy</em>.</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
@@ -593,6 +599,10 @@ without breaking by empty line as a paragraph.</p>
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2021/02/26/aspell-a-command-line-tool-to-check-spell/" rel="prev" title="Aspell: A Command Line Tool to Check Spell">
+                Aspell: A Command Line Tool to Check Spell <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -661,7 +671,7 @@ without breaking by empty line as a paragraph.</p>
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -737,7 +747,13 @@ without breaking by empty line as a paragraph.</p>
                     
                       
                     
-                    <span class="site-state-item-count">21</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -793,7 +809,7 @@ without breaking by empty line as a paragraph.</p>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

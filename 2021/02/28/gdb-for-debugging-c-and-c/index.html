@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="中文&English">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="AbstractGDB(from GNU) is a command line tool to debug your programs step by step.GCC is GNU Compiler Collection. it could compile many languages, including c, c++, java, fortran, pascal, etc.">
+<meta name="keywords" content="compile,gdb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gdb for Debugging C and C++">
+<meta property="og:url" content="www.deardon.win/2021/02/28/gdb-for-debugging-c-and-c/index.html">
+<meta property="og:site_name" content="D.P">
+<meta property="og:description" content="AbstractGDB(from GNU) is a command line tool to debug your programs step by step.GCC is GNU Compiler Collection. it could compile many languages, including c, c++, java, fortran, pascal, etc.">
+<meta property="og:locale" content="中文&English">
+<meta property="og:updated_time" content="2021-07-31T07:10:30.962Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Gdb for Debugging C and C++">
+<meta name="twitter:description" content="AbstractGDB(from GNU) is a command line tool to debug your programs step by step.GCC is GNU Compiler Collection. it could compile many languages, including c, c++, java, fortran, pascal, etc.">
+
+
+
+
+
+
+  <link rel="canonical" href="www.deardon.win/2021/02/28/gdb-for-debugging-c-and-c/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Gdb for Debugging C and C++ | D.P</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="中文&English">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">D.P</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">The Pages</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">24</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories<span class="badge">4</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">22</span></a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.deardon.win/2021/02/28/gdb-for-debugging-c-and-c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Don">
+      <meta itemprop="description" content="学习，记录，交流，分享...">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="D.P">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Gdb for Debugging C and C++
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2021-02-28 11:06:04" itemprop="dateCreated datePublished" datetime="2021-02-28T11:06:04+08:00">2021-02-28</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2021-07-31 15:10:30" itemprop="dateModified" datetime="2021-07-31T15:10:30+08:00">2021-07-31</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tool/" itemprop="url" rel="index"><span itemprop="name">tool</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>GDB(from GNU) is a command line tool to debug your programs step by step.<br>GCC is GNU Compiler Collection. it could compile many languages, including c, c++, java, fortran, pascal, etc.<br><a id="more"></a></p>
+<h3 id="gcc-g"><a href="#gcc-g" class="headerlink" title="gcc/g++"></a>gcc/g++</h3><p>GCC contains both gcc and g++.<br>And actully they have common for compiling c++.<br>Differences are:</p>
+<ul>
+<li>gcc is GNU C Compiler, gcc would <strong><em>*.c</em></strong> as c file, and treat <strong><em>*.cc</em></strong> as cpp file(grammer has difference).</li>
+<li>g++ is GNU C++ Compiler, g++ would treat both <strong><em>*.c</em></strong> and <strong><em>*.cc</em></strong> as cpp file. and g++ would link STL by default.</li>
+</ul>
+<p>So the suggestion is compile c project with gcc, compile c++ project with g++.</p>
+<p>Some useful compile options shown as below, assuming source file is main.cc.</p>
+<ul>
+<li><p>preprocessing  with <em>-E</em></p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ -E -o main.i main.cc</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>compiling to assembly code with <em>-S</em></p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ -S -o main.s main.cc</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>compiling to machine code with <em>-c</em></p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ -c -o main.o main.cc</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>link to machine code without option</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ -o main.out main.o</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>the most common usage: combination of compiling to machine code and link machine code</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ -o main.out main.cc</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="gdb"><a href="#gdb" class="headerlink" title="gdb"></a>gdb</h3><p>in order to apply gdb, you need to insert debug information when compiling with <em>-g</em> option.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ -g -o main.out main.cc</span><br></pre></td></tr></table></figure>
+<p>useful command for gdb</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">gdb 常用命令</span><br><span class="line">(1) gdb 可执行文件 : 表示对某个文件进行调试</span><br><span class="line">(2) b 函数名/行数  :  在某个函数名或行数前设置断点</span><br><span class="line">(3) run/r          : 表示开始运行，如果是正在调试的程序的话，表示再次进行调试</span><br><span class="line">(4) n/next         : 表示执行下一行语句</span><br><span class="line">(5) l/list         : 列出源码默认10行（当前位置的上下共10行）</span><br><span class="line">    list 行号      : 列出行号上下共10行的源码</span><br><span class="line">    list 函数名    : 列出函数名上下共10行的源码</span><br><span class="line">(6) s/step         : 表示单步执行，进入函数</span><br><span class="line">(7) p /x 变量名    : 按16进制输出变量的值</span><br><span class="line">      /d           : 按10进制</span><br><span class="line">      /o           : 按八进制</span><br><span class="line">(8) <span class="built_in">set</span> var 变量名=值 : 设置变量的值</span><br><span class="line">(9) bt(backtrace)  : 查看各级函数调用及参数,简写bt</span><br><span class="line">(10)q/quit         : 退出</span><br><span class="line">(11)finish         : 连续运行到当前函数返回为止，然后停下来等待命令</span><br><span class="line">(12)<span class="built_in">continue</span>/c     : 跳转到下个断点，或者跳转到观察点</span><br><span class="line">(13)ptype 变量名   : 可以查看变量的类型，简写为pt</span><br><span class="line">(14)watch</span><br><span class="line">    作用：一般用来观察某个变量/内存地址的状态(也可以是表达式），</span><br><span class="line">          如可以监控该变量/内存值是否被程序读/写情况。</span><br><span class="line">    有三种方法：</span><br><span class="line">    1.watch expr（指定变量/内存地址/表达式）</span><br><span class="line">    一旦expr的值有变化时，将停住程序。</span><br><span class="line">    2.rwatch expr</span><br><span class="line">    当expr被读时，停住程序。</span><br><span class="line">    3.awatch expr</span><br><span class="line">    当expr被读或被写时，停住程序。</span><br><span class="line">    watch使用步骤：</span><br><span class="line">        1. 使用<span class="built_in">break</span>在要观察的变量所在处设置断点；</span><br><span class="line">        2. 使用run执行，直到断点；</span><br><span class="line">        3. 使用watch设置观察点；</span><br><span class="line">        4. 使用<span class="built_in">continue</span>观察设置的观察点是否有变化。</span><br><span class="line">(15)start            : 开始执行程序，停在main函数第一行语句前面等待命令</span><br><span class="line">(16)info watchpoints : 列出所有观察点</span><br><span class="line">    info breakpoints : 查看当前设置的所有断点</span><br><span class="line">(17)d/delete [breakpoinsts num] [rang...]         </span><br><span class="line">    d/delete         : 删除所有断点</span><br><span class="line">    d/delete num     : 删除breakpoints为num的断点</span><br><span class="line">    d/delete num1-num2 : 删除breakpoints为num1-num2的断点</span><br><span class="line">(18)<span class="built_in">enable</span> num       : 启用num号断点</span><br><span class="line">(19)<span class="built_in">disable</span> num      : 关闭num号断点</span><br><span class="line">(20)u/until          : 结束当前循环</span><br><span class="line">————————————————</span><br><span class="line">版权声明：本文为CSDN博主「Linux猿」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。</span><br><span class="line">原文链接：https://blog.csdn.net/nyist_zxp/article/details/81429615</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">(21)x/examine : check bit level data <span class="keyword">in</span> given memory address</span><br><span class="line">x 是 examine 的缩写</span><br><span class="line">n表示要显示的内存单元的个数</span><br><span class="line">f表示显示方式:</span><br><span class="line">x 按十六进制格式显示变量</span><br><span class="line">d 按十进制格式显示变量</span><br><span class="line">u 按十进制格式显示无符号整型</span><br><span class="line">o 按八进制格式显示变量</span><br><span class="line">t 按二进制格式显示变量</span><br><span class="line">a 按十六进制格式显示变量</span><br><span class="line">i 指令地址格式</span><br><span class="line">c 按字符格式显示变量</span><br><span class="line">f 按浮点数格式显示变量</span><br><span class="line">u表示一个地址单元的长度</span><br><span class="line">b 单字节</span><br><span class="line">h 双字节</span><br><span class="line">w 四字节</span><br><span class="line">g 八字节</span><br><span class="line">例子:</span><br><span class="line">x /1dw address</span><br><span class="line">从内存地址address读取内容,显示一个4字节的十进制整数</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/compile/" rel="tag"># compile</a>
+          
+            <a href="/tags/gdb/" rel="tag"># gdb</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/02/26/coc-nvim-conquer-of-completion-for-vim/" rel="next" title="coc.nvim: Conquer of Completion for Vim">
+                <i class="fa fa-chevron-left"></i> coc.nvim: Conquer of Completion for Vim
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/05/29/git-in-daily-usage/" rel="prev" title="Git in Daily Usage">
+                Git in Daily Usage <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Don</p>
+              <p class="site-description motion-element" itemprop="description">学习，记录，交流，分享...</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gcc-g"><span class="nav-number">1.1.</span> <span class="nav-text">gcc/g++</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gdb"><span class="nav-number">1.2.</span> <span class="nav-text">gdb</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Don</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.7.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=6.7.0"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
