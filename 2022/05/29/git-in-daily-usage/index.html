@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="Abstract">
+  <meta name="description" content="AbstractGit is commonly used in daily work. In this post, some frequently used command and few common cases are listed.">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git in Daily Usage">
 <meta property="og:url" content="www.deardon.win/2022/05/29/git-in-daily-usage/index.html">
 <meta property="og:site_name" content="D.P">
-<meta property="og:description" content="Abstract">
+<meta property="og:description" content="AbstractGit is commonly used in daily work. In this post, some frequently used command and few common cases are listed.">
 <meta property="og:locale" content="中文&English">
-<meta property="og:updated_time" content="2022-05-29T15:20:34.537Z">
+<meta property="og:updated_time" content="2022-08-20T09:05:50.626Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git in Daily Usage">
-<meta name="twitter:description" content="Abstract">
+<meta name="twitter:description" content="AbstractGit is commonly used in daily work. In this post, some frequently used command and few common cases are listed.">
 
 
 
@@ -382,6 +382,22 @@
             
 
             
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2022-08-20 17:05:50" itemprop="dateModified" datetime="2022-08-20T17:05:50+08:00">2022-08-20</time>
+              
+            
           </span>
 
           
@@ -431,40 +447,45 @@
       
 
       
-        <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><a id="more"></a>
-<h2 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h2><h2 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h2><h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2><h2 id="Abstract-1"><a href="#Abstract-1" class="headerlink" title="Abstract"></a>Abstract</h2><p>Git is commonly used in daily work.
+        <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>Git is commonly used in daily work.
 In this post, some frequently used command and few common cases are listed.
-<!--more--></p>
-<h2 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h2><h3 id="Information-related"><a href="#Information-related" class="headerlink" title="Information related"></a>Information related</h3><p><code>git --version</code> Check installed git version information
+<a id="more"></a></p>
+<h2 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h2><h3 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h3><h4 id="Information-related"><a href="#Information-related" class="headerlink" title="Information related"></a>Information related</h4><p><code>git --version</code> Check installed git version information
 <code>git status</code> Check the status of working directory and staging area
 <code>git log</code>:</p>
 <ul>
 <li><code>git log --online</code> Show the list of commits in one line format</li>
 <li><code>git log -s $string</code> Show commits that make add or remove a certain $string</li>
 </ul>
-<h2 id="Use-cases"><a href="#Use-cases" class="headerlink" title="Use cases"></a>Use cases</h2><h3 id="Pull-remote-branch-when-no-local-exist"><a href="#Pull-remote-branch-when-no-local-exist" class="headerlink" title="Pull remote branch when no local exist"></a>Pull remote branch when no local exist</h3><p>You can make it by following steps.</p>
+<h3 id="Use-cases"><a href="#Use-cases" class="headerlink" title="Use cases"></a>Use cases</h3><h4 id="Pull-remote-branch-when-no-local-exist"><a href="#Pull-remote-branch-when-no-local-exist" class="headerlink" title="Pull remote branch when no local exist"></a>Pull remote branch when no local exist</h4><p>You can make it by following steps.</p>
 <ol>
 <li><code>git fetch origin</code></li>
 <li><code>git checkout --tack origin/$remote_branch_name</code></li>
 </ol>
-<h3 id="Push-local-new-branch-when-no-remote-exist"><a href="#Push-local-new-branch-when-no-remote-exist" class="headerlink" title="Push local new branch when no remote exist"></a>Push local new branch when no remote exist</h3><p>You can make it by following steps.</p>
+<h4 id="Push-local-new-branch-when-no-remote-exist"><a href="#Push-local-new-branch-when-no-remote-exist" class="headerlink" title="Push local new branch when no remote exist"></a>Push local new branch when no remote exist</h4><p>You can make it by following steps.</p>
 <ol>
 <li><code>git checkout -b $branch_name</code></li>
 <li><code>git push -u origin $branch_name</code></li>
 </ol>
-<h3 id="Delete-branch-in-both-local-and-remote"><a href="#Delete-branch-in-both-local-and-remote" class="headerlink" title="Delete branch in both local and remote"></a>Delete branch in both local and remote</h3><p>You can make it by following steps.</p>
+<h4 id="Delete-branch-in-both-local-and-remote"><a href="#Delete-branch-in-both-local-and-remote" class="headerlink" title="Delete branch in both local and remote"></a>Delete branch in both local and remote</h4><p>You can make it by following steps.</p>
 <ol>
 <li><code>git push --delete origin $branch_name</code></li>
 <li><code>git branch -d $branch_name</code></li>
 <li><code>git fetch -p</code></li>
 </ol>
-<h3 id="Amend-few-change-to-last-commit-which-already-pushed"><a href="#Amend-few-change-to-last-commit-which-already-pushed" class="headerlink" title="Amend few change to last commit which already pushed"></a>Amend few change to last commit which already pushed</h3><p>This case commonly happened when you have Pull Request,
+<h4 id="Amend-few-change-to-last-commit-which-already-pushed"><a href="#Amend-few-change-to-last-commit-which-already-pushed" class="headerlink" title="Amend few change to last commit which already pushed"></a>Amend few change to last commit which already pushed</h4><p>This case commonly happened when you have Pull Request,
  and reviewer want you to change a little bit.
 You can make it by following steps.</p>
 <ol>
 <li><code>git commit --amend --no-edit</code> or <code>git commit --amend -m &quot;new commit message&quot;</code></li>
 <li><code>git push -f</code></li>
 </ol>
+<h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2><ul>
+<li><p>2018-05-29: create post based on note of processon</p>
+</li>
+<li><p>2018-04-05: reorganize format and publish</p>
+</li>
+</ul>
 
       
     </div>
@@ -697,7 +718,7 @@ You can make it by following steps.</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Content"><span class="nav-number">2.</span> <span class="nav-text">Content</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Questions"><span class="nav-number">3.</span> <span class="nav-text">Questions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History"><span class="nav-number">4.</span> <span class="nav-text">History</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract-1"><span class="nav-number">5.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Commands"><span class="nav-number">6.</span> <span class="nav-text">Commands</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Information-related"><span class="nav-number">6.1.</span> <span class="nav-text">Information related</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Use-cases"><span class="nav-number">7.</span> <span class="nav-text">Use cases</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pull-remote-branch-when-no-local-exist"><span class="nav-number">7.1.</span> <span class="nav-text">Pull remote branch when no local exist</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Push-local-new-branch-when-no-remote-exist"><span class="nav-number">7.2.</span> <span class="nav-text">Push local new branch when no remote exist</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-branch-in-both-local-and-remote"><span class="nav-number">7.3.</span> <span class="nav-text">Delete branch in both local and remote</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Amend-few-change-to-last-commit-which-already-pushed"><span class="nav-number">7.4.</span> <span class="nav-text">Amend few change to last commit which already pushed</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Content"><span class="nav-number">2.</span> <span class="nav-text">Content</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Commands"><span class="nav-number">2.1.</span> <span class="nav-text">Commands</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Information-related"><span class="nav-number">2.1.1.</span> <span class="nav-text">Information related</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Use-cases"><span class="nav-number">2.2.</span> <span class="nav-text">Use cases</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Pull-remote-branch-when-no-local-exist"><span class="nav-number">2.2.1.</span> <span class="nav-text">Pull remote branch when no local exist</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Push-local-new-branch-when-no-remote-exist"><span class="nav-number">2.2.2.</span> <span class="nav-text">Push local new branch when no remote exist</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Delete-branch-in-both-local-and-remote"><span class="nav-number">2.2.3.</span> <span class="nav-text">Delete branch in both local and remote</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Amend-few-change-to-last-commit-which-already-pushed"><span class="nav-number">2.2.4.</span> <span class="nav-text">Amend few change to last commit which already pushed</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History"><span class="nav-number">3.</span> <span class="nav-text">History</span></a></li></ol></div>
             
 
           </div>
