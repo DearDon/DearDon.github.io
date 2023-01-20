@@ -334,7 +334,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="www.deardon.win/2016/09/11/vim-upgrade/">
+    <link itemprop="mainEntityOfPage" href="www.deardon.win/2016/09/11/vim-vundle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Don">
@@ -354,7 +354,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2016/09/11/vim-upgrade/" class="post-title-link" itemprop="url">升级旧版Vim到7.4以上</a>
+                <a href="/2016/09/11/vim-vundle/" class="post-title-link" itemprop="url">Vim 插件安装(Vundle)</a>
               
             
           </h1>
@@ -396,7 +396,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2021-02-26 16:52:57" itemprop="dateModified" datetime="2021-02-26T16:52:57+08:00">2021-02-26</time>
+                <time title="Modified: 2021-02-26 16:52:45" itemprop="dateModified" datetime="2021-02-26T16:52:45+08:00">2021-02-26</time>
               
             
           </span>
@@ -449,190 +449,11 @@
 
       
         
-          <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract:"></a>Abstract:</h2><p>由于自己ubuntu10.04的自带vim版本低于7.3(可用<code>vim --version</code>查看)，而安装vim插件YouCompleteMe要求至少7.3以上。因此折腾升级vim版本，这里尽量不想重编译安装。尝试了几次，失败了。<br>
+          <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract:"></a>Abstract:</h2><p>Vim非常强大，其中一个重要原因是丰富的插件。为了高效管理插件，Vundle(Vim bundle)是不错的选择，它也是一个vim的插件，但它可以管理其他插件，所以装好它其它插件都so easy.<br>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2016/09/11/vim-upgrade/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </p></div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="www.deardon.win/2015/12/07/ubuntu10-jekyll/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Don">
-      <meta itemprop="description" content="学习，记录，交流，分享...">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="D.P">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2015/12/07/ubuntu10-jekyll/" class="post-title-link" itemprop="url">搭建Jekyll写github Page</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2015-12-07 00:00:00" itemprop="dateCreated datePublished" datetime="2015-12-07T00:00:00+08:00">2015-12-07</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2021-02-26 16:53:35" itemprop="dateModified" datetime="2021-02-26T16:53:35+08:00">2021-02-26</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tool/" itemprop="url" rel="index"><span itemprop="name">tool</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>在ubuntu10.04下搭建jekyll写github page，其它平台未尝试。<br>内容参考的github官方的<a href="https://help.github.com/articles/using-jekyll-with-pages/" target="_blank" rel="noopener">说明</a>，比较可靠。<br>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2015/12/07/ubuntu10-jekyll/#more" rel="contents">
+              <a class="btn" href="/2016/09/11/vim-vundle/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -812,6 +633,185 @@
           
             <div class="post-button text-center">
               <a class="btn" href="/2015/12/07/aliyun-centos7-vpn/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </p></div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.deardon.win/2015/12/07/ubuntu10-jekyll/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Don">
+      <meta itemprop="description" content="学习，记录，交流，分享...">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="D.P">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2015/12/07/ubuntu10-jekyll/" class="post-title-link" itemprop="url">搭建Jekyll写github Page</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2015-12-07 00:00:00" itemprop="dateCreated datePublished" datetime="2015-12-07T00:00:00+08:00">2015-12-07</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2021-02-26 16:53:35" itemprop="dateModified" datetime="2021-02-26T16:53:35+08:00">2021-02-26</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tool/" itemprop="url" rel="index"><span itemprop="name">tool</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>在ubuntu10.04下搭建jekyll写github page，其它平台未尝试。<br>内容参考的github官方的<a href="https://help.github.com/articles/using-jekyll-with-pages/" target="_blank" rel="noopener">说明</a>，比较可靠。<br>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2015/12/07/ubuntu10-jekyll/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
