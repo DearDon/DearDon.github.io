@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="Abstract:To copy a file or dir is useful, python provide it by shutil, there are functions copyfile, copy, copymode, copy2, copytree.This pages note the differences between them.">
-<meta name="keywords" content="python,copy in coding">
+  <meta name="description" content="AbstractThis is the second edition of this book, written by Bryant O’Hallaron. This is a book be commented: a very heavy book, but as valuable as golden. This book shows how a program is running on sy">
+<meta name="keywords" content="programming,system">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python Copy File or Folder">
-<meta property="og:url" content="www.deardon.win/2016/12/11/python-copy/index.html">
+<meta property="og:title" content="Reading Notes of 《Computer Systems: A Programmer&#39;s Perspective》">
+<meta property="og:url" content="www.deardon.win/2023/01/22/reading-notes-of-《computer-systems-a-programmer-s-perspective》/index.html">
 <meta property="og:site_name" content="D.P">
-<meta property="og:description" content="Abstract:To copy a file or dir is useful, python provide it by shutil, there are functions copyfile, copy, copymode, copy2, copytree.This pages note the differences between them.">
+<meta property="og:description" content="AbstractThis is the second edition of this book, written by Bryant O’Hallaron. This is a book be commented: a very heavy book, but as valuable as golden. This book shows how a program is running on sy">
 <meta property="og:locale" content="中文&English">
-<meta property="og:updated_time" content="2021-02-26T08:47:03.598Z">
+<meta property="og:updated_time" content="2023-01-22T00:59:01.858Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python Copy File or Folder">
-<meta name="twitter:description" content="Abstract:To copy a file or dir is useful, python provide it by shutil, there are functions copyfile, copy, copymode, copy2, copytree.This pages note the differences between them.">
+<meta name="twitter:title" content="Reading Notes of 《Computer Systems: A Programmer&#39;s Perspective》">
+<meta name="twitter:description" content="AbstractThis is the second edition of this book, written by Bryant O’Hallaron. This is a book be commented: a very heavy book, but as valuable as golden. This book shows how a program is running on sy">
 
 
 
 
 
 
-  <link rel="canonical" href="www.deardon.win/2016/12/11/python-copy/">
+  <link rel="canonical" href="www.deardon.win/2023/01/22/reading-notes-of-《computer-systems-a-programmer-s-perspective》/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>Python Copy File or Folder | D.P</title>
+  <title>Reading Notes of 《Computer Systems: A Programmer's Perspective》 | D.P</title>
   
 
 
@@ -335,7 +335,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="www.deardon.win/2016/12/11/python-copy/">
+    <link itemprop="mainEntityOfPage" href="www.deardon.win/2023/01/22/reading-notes-of-《computer-systems-a-programmer-s-perspective》/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Don">
@@ -352,7 +352,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python Copy File or Folder
+          <h1 class="post-title" itemprop="name headline">Reading Notes of 《Computer Systems: A Programmer's Perspective》
 
               
             
@@ -378,24 +378,12 @@
                 
               
 
-              <time title="Created: 2016-12-11 00:00:00" itemprop="dateCreated datePublished" datetime="2016-12-11T00:00:00+08:00">2016-12-11</time>
+              <time title="Created: 2023-01-22 08:33:48 / Modified: 08:59:01" itemprop="dateCreated datePublished" datetime="2023-01-22T08:33:48+08:00">2023-01-22</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2021-02-26 16:47:03" itemprop="dateModified" datetime="2021-02-26T16:47:03+08:00">2021-02-26</time>
               
             
           </span>
@@ -412,7 +400,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/reading-notes/" itemprop="url" rel="index"><span itemprop="name">reading notes</span></a></span>
 
                 
                 
@@ -447,23 +435,29 @@
       
 
       
-        <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract:"></a>Abstract:</h2><p>To copy a file or dir is useful, python provide it by shutil, there are functions copyfile, copy, copymode, copy2, copytree.<br>This pages note the differences between them.<br><a id="more"></a></p>
-<h2 id="Content"><a href="#Content" class="headerlink" title="Content:"></a>Content:</h2><h3 id="copy-API-in-python"><a href="#copy-API-in-python" class="headerlink" title="copy API in python:"></a>copy API in python:</h3><ul>
-<li><p><code>copyfile</code>, it cp file to file, the dst must also be a file(not folder).<br>If there already a file with same name in dst, it will be coverd.<br>Available command: <code>shutil.copyfile file file</code></p>
-</li>
-<li><p><code>copy</code>, it cp file to file/folder, the mode/createtime will be new.<br>If there already a file with same name in dst, it will be coverd.<br>Available command: <code>shutil.copy file file|folder</code></p>
-</li>
-<li><p><code>copy2</code>, similar to copy, but it also cp the mode/createtime from src.<br>available command: <code>shutil.copy2 file file|folder</code></p>
-</li>
-<li><p><code>copymode</code>, it only copy mode, exclude file content.<br>the dst file/folder must exist.<br>available command: <code>shutil.copymode file|folder file|folder</code></p>
-</li>
-<li><p><code>copytree</code>, it can cp folder to folder<br>the dst file/folder must not exist.<br>available command: <code>shutil.copytree folder folder</code></p>
-</li>
-</ul>
-<h3 id="code-example"><a href="#code-example" class="headerlink" title="code example:"></a>code example:</h3><pre><code>&lt;script src=&quot;https://gist.github.com/DearDon/02a2a88639a8659a8905e21cb6615a5e.js?file=python-copy.py&quot;&gt;&lt;/script&gt;
-</code></pre><h2 id="History"><a href="#History" class="headerlink" title="History:"></a>History:</h2><ul>
-<li><em>2016-12-11</em>:create the page</li>
-<li><em>2018-04-08</em>:reformat the page with md title and gist for code snippet</li>
+        <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>This is the second edition of this book, written by Bryant O’Hallaron.
+This is a book be commented: a very heavy book, but as valuable as golden.
+This book shows how a program is running on system in quite detail.
+By reading it, you’ll know how your program is working and running.
+I’m reading the kindle version.</p>
+<a id="more"></a>
+<h2 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h2><h3 id="1-1-Information-Is-Bits-Context"><a href="#1-1-Information-Is-Bits-Context" class="headerlink" title="1.1 Information Is Bits + Context"></a>1.1 Information Is Bits + Context</h3><p>Everyone is saying all things in computer is 0 and 1.
+No matter they really know computer or not.
+But what’s it really mean and how 0 and 1 could do so much?</p>
+<blockquote>
+<p>All information in a system - including disk files, programs stored in memory,
+ user data stored in memory, and data transferred across a network - is represented
+ as a bunch of bits. The only thing that distinguishes different data objects is
+ the <strong>context</strong> in which we view them. For example, in different contexts, the
+ same sequence of bytes might represent an integer, floating-point number, character
+ string, or machine instruction.</p>
+</blockquote>
+<p>This says all data are just a bunch of bits(0/1). Those bits keep the real content
+ of information. But in order to interpret those <strong>content</strong>, you must also have
+ <strong>context</strong>.  Context is like metadata that let you know to read and understand
+ those bits.</p>
+<h2 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h2><h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2><ul>
+<li>2023-01-22: draft this post and record #1.1</li>
 </ul>
 
       
@@ -488,9 +482,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag"># python</a>
+            <a href="/tags/programming/" rel="tag"># programming</a>
           
-            <a href="/tags/copy-in-coding/" rel="tag"># copy in coding</a>
+            <a href="/tags/system/" rel="tag"># system</a>
           
         </div>
       
@@ -503,8 +497,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/09/python-processpool/" rel="next" title="Python Multiprocess Pool">
-                <i class="fa fa-chevron-left"></i> Python Multiprocess Pool
+              <a href="/2023/01/05/reading-notes-of-《effective-modern-c-》/" rel="next" title="Reading Notes of 《Effective Modern C++》">
+                <i class="fa fa-chevron-left"></i> Reading Notes of 《Effective Modern C++》
               </a>
             
           </div>
@@ -512,10 +506,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/12/highlight-code-in-jekyll/" rel="prev" title="Highlight Code in Jekyll">
-                Highlight Code in Jekyll <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -715,7 +705,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Content"><span class="nav-number">2.</span> <span class="nav-text">Content:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#copy-API-in-python"><span class="nav-number">2.1.</span> <span class="nav-text">copy API in python:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#code-example"><span class="nav-number">2.2.</span> <span class="nav-text">code example:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History"><span class="nav-number">3.</span> <span class="nav-text">History:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Content"><span class="nav-number">2.</span> <span class="nav-text">Content</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-Information-Is-Bits-Context"><span class="nav-number">2.1.</span> <span class="nav-text">1.1 Information Is Bits + Context</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Questions"><span class="nav-number">3.</span> <span class="nav-text">Questions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History"><span class="nav-number">4.</span> <span class="nav-text">History</span></a></li></ol></div>
             
 
           </div>
