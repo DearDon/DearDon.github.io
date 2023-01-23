@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="D.P">
 <meta property="og:description" content="AbstractThis is the second edition of this book, written by Bryant O’Hallaron. This is a book be commented: a very heavy book, but as valuable as golden. This book shows how a program is running on sy">
 <meta property="og:locale" content="中文&English">
-<meta property="og:updated_time" content="2023-01-22T01:09:32.678Z">
+<meta property="og:updated_time" content="2023-01-23T03:29:49.811Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Reading Notes of 《Computer Systems: A Programmer&#39;s Perspective》">
 <meta name="twitter:description" content="AbstractThis is the second edition of this book, written by Bryant O’Hallaron. This is a book be commented: a very heavy book, but as valuable as golden. This book shows how a program is running on sy">
@@ -378,12 +378,24 @@
                 
               
 
-              <time title="Created: 2023-01-22 08:33:48 / Modified: 09:09:32" itemprop="dateCreated datePublished" datetime="2023-01-22T08:33:48+08:00">2023-01-22</time>
+              <time title="Created: 2023-01-22 08:33:48" itemprop="dateCreated datePublished" datetime="2023-01-22T08:33:48+08:00">2023-01-22</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2023-01-23 11:29:49" itemprop="dateModified" datetime="2023-01-23T11:29:49+08:00">2023-01-23</time>
               
             
           </span>
@@ -466,8 +478,37 @@ But what’s it really mean and how 0 and 1 could do so much?</p>
  binary. Since they’re more commong encoding rules know, like UTF-XXX, and even
  GKXXX for Chinese. I would say all data could be interpreted by those common encoding
  rules are text, so the file could be called text file.</p>
+<h3 id="1-4-Processors-and-Memory"><a href="#1-4-Processors-and-Memory" class="headerlink" title="1.4 Processors and Memory"></a>1.4 Processors and Memory</h3><blockquote>
+<p>Buses are typically designed to transfer fixed-sized chunks of bytes known as <em>words</em>.</p>
+</blockquote>
+<p><em>word</em> are important for system because of IO buess transfer data in size of chunks
+ of words.</p>
+<blockquote>
+<p>Logically, memory is organized as a linear array of bytes, each with its own unique
+address(array index) starting at zero.</p>
+</blockquote>
+<p>As mentioned before, all information are stream of bits. we’ll need other context
+ to interpret it, the same types could be interpreted as interger, float or even
+ instruction.</p>
+<blockquote>
+<p>At any point in time, the PC points at (contains the address of) some machine-language
+ instruction in main memory.
+ From the time that power is applied to the system, until the time that the power
+ is applied to the system, until the time that the power is shut off, a processor
+ repeatedly executes the instruction pointed at by the program counter and updates
+ the program counter to point to the next instruction.
+ In this model, instructions execute in strict sequence, and executing a single
+ instruction involves performing a series of steps. The processor reads the
+ instruction from memory pointed at by the program counter(PC), interprets the bits
+ in the instruction, performs some simple operation dictated by the instruction,
+ and then updates the PC to point to the next instruction, which may or may not be
+ contiguous in memory to the instruction that was just executed.</p>
+</blockquote>
+<p>These statements really show how PC is executing instructions, which could be the
+ your coding program.</p>
 <h2 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h2><h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2><ul>
 <li>2023-01-22: draft this post and record #1.1</li>
+<li>2023-01-23: #1.4 how binary is executed in PC</li>
 </ul>
 
       
@@ -715,7 +756,7 @@ But what’s it really mean and how 0 and 1 could do so much?</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Content"><span class="nav-number">2.</span> <span class="nav-text">Content</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-Information-Is-Bits-Context"><span class="nav-number">2.1.</span> <span class="nav-text">1.1 Information Is Bits + Context</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Questions"><span class="nav-number">3.</span> <span class="nav-text">Questions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History"><span class="nav-number">4.</span> <span class="nav-text">History</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Content"><span class="nav-number">2.</span> <span class="nav-text">Content</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-Information-Is-Bits-Context"><span class="nav-number">2.1.</span> <span class="nav-text">1.1 Information Is Bits + Context</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-Processors-and-Memory"><span class="nav-number">2.2.</span> <span class="nav-text">1.4 Processors and Memory</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Questions"><span class="nav-number">3.</span> <span class="nav-text">Questions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History"><span class="nav-number">4.</span> <span class="nav-text">History</span></a></li></ol></div>
             
 
           </div>
