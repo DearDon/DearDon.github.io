@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="Abstract:Vim非常强大，其中一个重要原因是丰富的插件。为了高效管理插件，Vundle(Vim bundle)是不错的选择，它也是一个vim的插件，但它可以管理其他插件，所以装好它其它插件都so easy.">
-<meta name="keywords" content="vim plugin,install,vundle">
+  <meta name="description" content="AbstractTmux is a commond line based tool that enable you to open multiple windowns,  tabs or sessions in one terminal.  With that, you can work on multiple tasks  efficiently as you can separate them">
+<meta name="keywords" content="tmux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vim 插件安装(Vundle)">
-<meta property="og:url" content="www.deardon.win/2016/09/11/vim-vundle/index.html">
+<meta property="og:title" content="Tmux in Daily Usage">
+<meta property="og:url" content="www.deardon.win/2023/02/25/tmux-in-daily-usage/index.html">
 <meta property="og:site_name" content="D.P">
-<meta property="og:description" content="Abstract:Vim非常强大，其中一个重要原因是丰富的插件。为了高效管理插件，Vundle(Vim bundle)是不错的选择，它也是一个vim的插件，但它可以管理其他插件，所以装好它其它插件都so easy.">
+<meta property="og:description" content="AbstractTmux is a commond line based tool that enable you to open multiple windowns,  tabs or sessions in one terminal.  With that, you can work on multiple tasks  efficiently as you can separate them">
 <meta property="og:locale" content="中文&English">
-<meta property="og:updated_time" content="2021-02-26T08:52:45.439Z">
+<meta property="og:updated_time" content="2023-02-25T05:28:04.340Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vim 插件安装(Vundle)">
-<meta name="twitter:description" content="Abstract:Vim非常强大，其中一个重要原因是丰富的插件。为了高效管理插件，Vundle(Vim bundle)是不错的选择，它也是一个vim的插件，但它可以管理其他插件，所以装好它其它插件都so easy.">
+<meta name="twitter:title" content="Tmux in Daily Usage">
+<meta name="twitter:description" content="AbstractTmux is a commond line based tool that enable you to open multiple windowns,  tabs or sessions in one terminal.  With that, you can work on multiple tasks  efficiently as you can separate them">
 
 
 
 
 
 
-  <link rel="canonical" href="www.deardon.win/2016/09/11/vim-vundle/">
+  <link rel="canonical" href="www.deardon.win/2023/02/25/tmux-in-daily-usage/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>Vim 插件安装(Vundle) | D.P</title>
+  <title>Tmux in Daily Usage | D.P</title>
   
 
 
@@ -335,7 +335,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="www.deardon.win/2016/09/11/vim-vundle/">
+    <link itemprop="mainEntityOfPage" href="www.deardon.win/2023/02/25/tmux-in-daily-usage/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Don">
@@ -352,7 +352,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Vim 插件安装(Vundle)
+          <h1 class="post-title" itemprop="name headline">Tmux in Daily Usage
 
               
             
@@ -378,24 +378,12 @@
                 
               
 
-              <time title="Created: 2016-09-11 00:00:00" itemprop="dateCreated datePublished" datetime="2016-09-11T00:00:00+08:00">2016-09-11</time>
+              <time title="Created: 2023-02-25 10:21:28 / Modified: 13:28:04" itemprop="dateCreated datePublished" datetime="2023-02-25T10:21:28+08:00">2023-02-25</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2021-02-26 16:52:45" itemprop="dateModified" datetime="2021-02-26T16:52:45+08:00">2021-02-26</time>
               
             
           </span>
@@ -447,50 +435,60 @@
       
 
       
-        <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract:"></a>Abstract:</h2><p>Vim非常强大，其中一个重要原因是丰富的插件。为了高效管理插件，Vundle(Vim bundle)是不错的选择，它也是一个vim的插件，但它可以管理其他插件，所以装好它其它插件都so easy.<br><a id="more"></a></p>
-<h2 id="Content"><a href="#Content" class="headerlink" title="Content:"></a>Content:</h2><p>以下安装基于linux，参考自Vundle在github上的<a href="https://github.com/VundleVim/Vundle.vim" target="_blank" rel="noopener">项目说明</a>，原文写得很清楚，这里只是简单翻译。</p>
-<h3 id="建立Vundle"><a href="#建立Vundle" class="headerlink" title="建立Vundle:"></a>建立Vundle:</h3><pre><code>$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-</code></pre><h3 id="Vundle配置-vimrc"><a href="#Vundle配置-vimrc" class="headerlink" title="Vundle配置(.vimrc):"></a>Vundle配置(.vimrc):</h3><pre><code>set nocompatible              &quot; be iMproved, required
-filetype off                  &quot; required
-
-&quot; set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-&quot; alternatively, pass a path where Vundle should install plugins
-&quot;call vundle#begin(&#39;~/some/path/here&#39;)
-
-&quot; let Vundle manage Vundle, required
-Plugin &#39;VundleVim/Vundle.vim&#39;
-
-&quot; All of your Plugins must be added before the following line
-call vundle#end()            &quot; required
-filetype plugin indent on    &quot; required
-&quot; To ignore plugin indent changes, instead use:
-&quot;filetype plugin on
-&quot;
-&quot; Bundle &#39;Valloric/YoucompleteMe&#39;
-&quot;
-&quot; Brief help
-&quot; :PluginList       - lists configured plugins
-&quot; :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-&quot; :PluginSearch foo - searches for foo; append `!` to refresh local cache
-&quot; :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-&quot;
-&quot; see :h vundle for more details or wiki for FAQ
-&quot; Put your non-Plugin stuff after this line
-</code></pre><p>可以看到想安装插件只要在<code>call vundel#begin()</code>和<code>call vundle#end()</code>间加入相应的插件即可自动管理(格式如<code>Plugin &#39;VundleVim/Vundle.vim&#39;</code>，该插件是必须的)。实践发现在<code>call vundle#end()</code>之后用<code>Bundle $PluginName</code>(格式如<code>Bundle &#39;Valloric/YoucompleteMe&#39;</code>)也可以和上述<code>Plugin $PluginName</code>方式一样管理插件。</p>
-<h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件:"></a>安装插件:</h3><p>记得先<code>source $vimrcfile</code>($vimrcfile为上面的vimrc)，让其生效。然后<br>打开vim输入</p>
-<pre><code>:PluginInstall
-</code></pre><p>或在终端输入</p>
-<pre><code>$ vim +PluginInstall +qall
-</code></pre><h3 id="update插件"><a href="#update插件" class="headerlink" title="update插件:"></a>update插件:</h3><p>打开vim输入</p>
-<pre><code>:PluginUpdate
-</code></pre><p>或在终端输入</p>
-<pre><code>$ vim +PluginUpdate +qall
-</code></pre><h2 id="History"><a href="#History" class="headerlink" title="History:"></a>History:</h2><ul>
-<li><em>2016-09-11</em>: 将内容记录下来</li>
-<li><em>2016-09-13</em>: 修改排版</li>
-<li><em>2018-01-06</em>: add update plugin</li>
+        <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>Tmux is a commond line based tool that enable you to open multiple windowns,
+ tabs or sessions in one terminal.  With that, you can work on multiple tasks
+ efficiently as you can separate them in different tmux sessions.
+<a id="more"></a></p>
+<h2 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h2><p>In following part, we may use a command or keyboard-shortcut to achieve our request.</p>
+<ul>
+<li>command usually starts with <code>tmux</code>, which would input to terminal.</li>
+<li>keyboard-shortcut usually starts with <code>ctral+b</code>, which would only work when
+you’re in a terminal window that attaching session.</li>
+</ul>
+<h3 id="tmux-session-related"><a href="#tmux-session-related" class="headerlink" title="tmux session related"></a>tmux session related</h3><p>Keep in mind that the both attached&amp;detached session would still keep
+ running the program. It’s quite useful when you’re working on a remote server,
+ the program would keep running in detached session even though you may
+ disconnected with remote server.</p>
+<p>A session would have an unique session-idx, it’s assigned when created, and is
+ self increased (start by 0).</p>
+<ul>
+<li>start a new session: <code>tmux</code> or <code>tmux new -s &lt;session-name&gt;</code>.</li>
+<li>list all existing sessions: <code>tmux ls</code> or <code>tmux list-session</code> or <code>ctrl+b s</code>.</li>
+<li>detach existing session: <code>tmux detach</code> or <code>ctrl+b d</code>.</li>
+<li>attach existing session: <code>tmux attach -t session-idx</code> or <code>tmux attach -t session-name</code>.</li>
+<li>kill existing session: <code>tmux kill-session -t session-idx</code> or
+<code>tmux kill-session -t session-name</code>.</li>
+<li>switch attached session: <code>tmux switch -t session-idx</code> or <code>tmux switch -t session-name</code>.</li>
+<li>rename session: <code>tmux rename-session -t session-idx new_session-name</code> or
+<code>ctrl+b $</code>.</li>
+</ul>
+<h3 id="tmux-window-related"><a href="#tmux-window-related" class="headerlink" title="tmux window related"></a>tmux window related</h3><p>A session could have multiple windows.
+Following commands or keyboard-shortcut requires you’re in terminal attaching a session.</p>
+<ul>
+<li>create a new window: <code>tmux new-window</code> or <code>tmux new-window -n &lt;window-name&gt;</code>
+or <code>ctrl+b c</code></li>
+<li>select window: <code>tmux select-window -t &lt;window-idx&gt;</code> or
+<code>tmux select-window -t &lt;window-name&gt;</code> or <code>ctrl+b &lt;window-idx&gt;</code></li>
+<li>rename window: <code>tmux rename-window &lt;new-name&gt;</code> or <code>ctrl+b ,</code></li>
+<li>switch window: <code>ctrl+b n</code> for next or <code>ctrl+b p</code> for prev`</li>
+<li>list window: <code>ctrl+b w</code></li>
+</ul>
+<h3 id="tmux-pane-related"><a href="#tmux-pane-related" class="headerlink" title="tmux pane related"></a>tmux pane related</h3><p>A window could have multiple panes.
+Following commands or keyboard-shortcut requires you’re in terminal attaching a session.</p>
+<ul>
+<li>split window to panes horizontally: <code>tmux split-window -h</code> or <code>ctrl+b %</code>.</li>
+<li>split window to panes vertically: <code>tmux split-window</code> or <code>ctrl+b &quot;</code>.</li>
+<li>select up pane: <code>tmux select-pane -U</code> or <code>ctrl+b &lt;up arrow&gt;</code>.</li>
+<li>select down pane: <code>tmux select-pane -D</code> or <code>ctrl+b &lt;down arrow&gt;</code>.</li>
+<li>select left pane: <code>tmux select-pane -L</code> or <code>ctrl+b &lt;left arrow&gt;</code>.</li>
+<li>select right pane: <code>tmux select-pane -R</code> or <code>ctrl+b &lt;right arrow&gt;</code>.</li>
+<li>move up current pane: <code>tmux swap-pane -U</code>.</li>
+<li>move down current pane: <code>tmux swap-pane -D</code>.</li>
+<li>ajust pane size: `ctrl+b ctrl+<arrow key>.</arrow></li>
+<li>turn on/off fullsize on current pane: <code>ctrl+b z</code>.</li>
+</ul>
+<h2 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h2><h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2><ul>
+<li>2023-02-25: create post to record the most commonly used commands</li>
 </ul>
 
       
@@ -515,11 +513,7 @@ filetype plugin indent on    &quot; required
       
         <div class="post-tags">
           
-            <a href="/tags/vim-plugin/" rel="tag"># vim plugin</a>
-          
-            <a href="/tags/install/" rel="tag"># install</a>
-          
-            <a href="/tags/vundle/" rel="tag"># vundle</a>
+            <a href="/tags/tmux/" rel="tag"># tmux</a>
           
         </div>
       
@@ -532,8 +526,8 @@ filetype plugin indent on    &quot; required
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/11/python-parse/" rel="next" title="Python Parse Console Input">
-                <i class="fa fa-chevron-left"></i> Python Parse Console Input
+              <a href="/2023/01/22/reading-notes-of-《computer-systems-a-programmer-s-perspective》/" rel="next" title="Reading Notes of 《Computer Systems: A Programmer's Perspective》">
+                <i class="fa fa-chevron-left"></i> Reading Notes of 《Computer Systems: A Programmer's Perspective》
               </a>
             
           </div>
@@ -541,10 +535,6 @@ filetype plugin indent on    &quot; required
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/15/python-singleton/" rel="prev" title="Python实现单例模式">
-                Python实现单例模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -746,7 +736,7 @@ filetype plugin indent on    &quot; required
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Content"><span class="nav-number">2.</span> <span class="nav-text">Content:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建立Vundle"><span class="nav-number">2.1.</span> <span class="nav-text">建立Vundle:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vundle配置-vimrc"><span class="nav-number">2.2.</span> <span class="nav-text">Vundle配置(.vimrc):</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装插件"><span class="nav-number">2.3.</span> <span class="nav-text">安装插件:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#update插件"><span class="nav-number">2.4.</span> <span class="nav-text">update插件:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History"><span class="nav-number">3.</span> <span class="nav-text">History:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Content"><span class="nav-number">2.</span> <span class="nav-text">Content</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tmux-session-related"><span class="nav-number">2.1.</span> <span class="nav-text">tmux session related</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tmux-window-related"><span class="nav-number">2.2.</span> <span class="nav-text">tmux window related</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tmux-pane-related"><span class="nav-number">2.3.</span> <span class="nav-text">tmux pane related</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Questions"><span class="nav-number">3.</span> <span class="nav-text">Questions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History"><span class="nav-number">4.</span> <span class="nav-text">History</span></a></li></ol></div>
             
 
           </div>
